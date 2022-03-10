@@ -13,6 +13,7 @@ export class WeatherRemoteService {
     params = params.append('lat', '35.5');
     params = params.append('lon', '-78.5');
 
+    
     let headers = new HttpHeaders();
     headers = headers.append('x-rapidapi-host', 'weatherbit-v1-mashape.p.rapidapi.com');
     headers= headers.append(
