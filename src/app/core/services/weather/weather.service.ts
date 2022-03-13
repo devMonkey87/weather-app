@@ -8,6 +8,6 @@ export class WeatherService {
   constructor(private remoteService: WeatherRemoteService) {}
 
   getData() {
-    this.remoteService.firstCall().then((response) => console.log(response));
+    return this.remoteService.firstCall();
   }
 }

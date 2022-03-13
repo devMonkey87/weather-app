@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainDashboardComponent } from './core/main-dashboard/main-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './core/main-dashboard/card/card/card.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainDashboardComponent
+    MainDashboardComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
