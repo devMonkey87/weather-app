@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { RootObject } from 'src/app/core/services/weather/constants/interfaces/current-weather';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { Data } from 'src/app/core/services/weather/constants/interfaces/current-weather';
 import { WeatherService } from 'src/app/core/services/weather/weather.service';
 
 @Component({
@@ -9,11 +10,14 @@ import { WeatherService } from 'src/app/core/services/weather/weather.service';
 })
 export class CardComponent implements OnInit {
 
-  data: RootObject = { data: [], count: 0 };
+  data: Data = {} as Data;
+  faSun = faSun;
+  faMoon = faMoon;
+
 
   constructor(private weatherService: WeatherService) {}
 
-  ngOnInit(): void {
-    this.weatherService.getData().then((resp) => (this.data = resp));
+   async ngOnInit(): Promise<void> {
+    await this.weatherService.getData().then(response => this.data = response);
   }
 }

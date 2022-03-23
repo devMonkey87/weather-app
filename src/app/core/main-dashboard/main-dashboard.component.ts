@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RootObject } from '../services/weather/constants/interfaces/current-weather';
+import { Data } from '../services/weather/constants/interfaces/current-weather';
 import { WeatherService } from '../services/weather/weather.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { WeatherService } from '../services/weather/weather.service';
   styleUrls: ['./main-dashboard.component.scss'],
 })
 export class MainDashboardComponent implements OnInit {
-  data: RootObject = { data: [], count: 0 };
+  data: Data = {} as Data;
 
   constructor(private weatherService: WeatherService) {}
 

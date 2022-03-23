@@ -43,9 +43,4 @@
         app_temp: number;
     }
 
-    export interface RootObject {
-        data: Data[];
-        count: number;
-    }
-
 

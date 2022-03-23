@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MainDashboardComponent } from './core/main-dashboard/main-dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './core/main-dashboard/card/card/card.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -17,9 +18,11 @@ import { CardComponent } from './core/main-dashboard/card/card/card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

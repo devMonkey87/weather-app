@@ -1,8 +1,8 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CURRENT_WEATHER_URL, WEATHER_URL } from './constants';
-import { RootObject } from './constants/interfaces/current-weather';
 import {map} from 'rxjs/operators'
+import { Data } from './constants/interfaces/current-weather';
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +23,6 @@ export class WeatherRemoteService {
       '94ee14ffabmshfbfd83af1fe237ep166202jsn5bd8d48365f2'
     );
 
-    return this.http.get<RootObject>(CURRENT_WEATHER_URL, { params, headers }).toPromise();
+    return this.http.get<any>(CURRENT_WEATHER_URL, { params, headers }).pipe(map((data)=> data.data[0])).toPromise();
   }
 }

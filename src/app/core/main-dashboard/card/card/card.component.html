@@ -1,14 +1,29 @@
+<div style="width: 300px; background-color: red;">
+
+</div>
+
 <div class="main-card">
     <div class="card mb-3">
-        <h3 class="card-header black">{{data.data[0].city_name}}</h3>
+        <h3 class="card-header black">{{data.city_name}}</h3>
         <div class="card-body">
-            <h5 class="card-title black">{{data.data[0].weather.description}}</h5>
-            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            <h5 class="card-title black">{{data.weather.description}}</h5>
+            <h6 class="card-subtitle text-muted">{{data.city_name}}</h6>
         </div>
         <img src="assets/bcn.jpg" alt="Kiwi standing on oval">
-
+        <br />
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Cras justo odio</li>
+            <li class="flex-evenly">
+                <span>
+                    <fa-icon [icon]="faSun"></fa-icon>
+                    {{data.sunrise}}
+                </span>
+                <span>
+                    <fa-icon [icon]="faMoon"></fa-icon>
+                    {{data.sunset}}
+                </span>
+
+            </li>
+
             <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
