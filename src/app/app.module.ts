@@ -7,13 +7,15 @@ import { MainDashboardComponent } from './core/main-dashboard/main-dashboard.com
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './core/main-dashboard/card/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ImcComponent } from './core/imc/imc.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainDashboardComponent,
-    CardComponent
+    CardComponent,
+    ImcComponent
   ],
   imports: [
     BrowserModule,
