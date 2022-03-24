@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './core/main-dashboard/card/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImcComponent } from './core/imc/imc.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ImcComponent } from './core/imc/imc.component';
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
