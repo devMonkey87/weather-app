@@ -12,11 +12,7 @@ export class ImcService {
     public model: PersonBMIModel
   ) {}
 
-  async initData(data: IPersonBMI): Promise<void> {
-    this.model.data = await this.remoteService.getIMC(data);
-  }
-
-  public async getData(data:IPersonBMI): Promise<IPersonBMI> {
-    return this.model.data;
+  async getData(data: IPersonBMI) {
+    return (this.model.data = await this.remoteService.getIMC(data));
   }
 }

@@ -9,6 +9,7 @@ import { CardComponent } from './core/main-dashboard/card/card/card.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImcComponent } from './core/imc/imc.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ImcModalComponent } from './core/imc/imc-modal/imc-modal/imc-modal.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     MainDashboardComponent,
     CardComponent,
-    ImcComponent
+    ImcComponent,
+    ImcModalComponent
   ],
   imports: [
     BrowserModule,
