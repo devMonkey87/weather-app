@@ -16,7 +16,6 @@ describe('ImcModalComponent', () => {
 //another test
 
 
-  //test
   beforeEach(() => {
     fixture = TestBed.createComponent(ImcModalComponent);
     component = fixture.componentInstance;
