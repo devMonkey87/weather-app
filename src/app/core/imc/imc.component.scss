@@ -1,10 +1,20 @@
 .main-form {
     width: 600px;
-    border: 5px solid #FFFF00;
-    text-align: center;
+    height: 400px;
+    background-color: orange;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
 }
 
-.text-danger {
-    color: red;
-    background-color: purple;
+.right{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
