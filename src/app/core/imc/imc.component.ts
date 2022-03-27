@@ -45,7 +45,7 @@ export class ImcComponent implements OnInit {
       this.data
     );
 
-    bootbox.alert("This is the default alert!");
+    bootbox.alert("This is the default alert! <br>estoo otro</div>");
 
     
   }
