@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ImcModalComponent } from './imc-modal/imc-modal/imc-modal.component';
 import { IPersonBMI } from './interfaces/IPersonBMI';
 import { ImcService } from './services/imc.service';
 
@@ -12,7 +14,14 @@ export class ImcComponent implements OnInit {
   resultado: string = ''; //FIXME mejorar error messages
   form!: FormGroup;
   data: IPersonBMI = {} as IPersonBMI;
-  constructor(private fb: FormBuilder, private imcService: ImcService) {}
+
+  closeResult = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private imcService: ImcService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -31,22 +40,20 @@ export class ImcComponent implements OnInit {
 
       const personData = this.form.value;
 
-      console.log('se informa ok', personData);
       this.test(personData);
-    } else this.resultado = 'Hay datos inválidos en el formulario';
+    } else {this.resultado = 'Hay datos inválidos en el formulario'};
   }
 
   async test(personData: any) {
     // this.data = await this.imcService.getData(personData); //TODO skip to save data API
+    this.data = { height: 1.75, weight: 80, bmi: 24.33 };
+    this.openModal(this.data);
+  }
 
-    this.data =  { height: 1.75, weight: 80, bmi: 24.33 };
-    console.log(
-      '🚀 ~ file: imc.component.ts ~ line 42 ~ ImcComponent ~ test ~ data',
-      this.data
-    );
-
-    bootbox.alert("This is the default alert! <br>estoo otro</div>");
-
-    
+  private openModal(data: IPersonBMI) {
+    const modalRef = this.modalService.open(ImcModalComponent, {
+      ariaLabelledBy: 'modal-basic-title',
+    });
+    modalRef.componentInstance.data = data;
   }
 }

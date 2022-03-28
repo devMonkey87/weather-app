@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImcComponent } from './core/imc/imc.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImcModalComponent } from './core/imc/imc-modal/imc-modal/imc-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ImcModalComponent } from './core/imc/imc-modal/imc-modal/imc-modal.comp
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
