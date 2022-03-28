@@ -1,19 +1,23 @@
-<div class="modal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">IMC lts</h4>
+  <button type="button" class="btn-close" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  <div class="mb-3">
+    <label for="height">Height</label>
+    <p>{{data.height}}</p>
+
   </div>
+  <div class="mb-3">
+    <label for="weight">Weight</label>
+    <p>{{data.weight}}</p>
+
+  </div>
+  <div class="mb-3">
+    <label for="imc">IMC</label>
+    <p>{{data.bmi}}</p>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Save</button>
+</div>
