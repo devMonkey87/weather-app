@@ -45,8 +45,8 @@ export class ImcComponent implements OnInit {
   }
 
   async test(personData: any) {
-    // this.data = await this.imcService.getData(personData); //TODO skip to save data API
-    this.data = { height: 1.75, weight: 80, bmi: 24.33 };
+     this.data = await this.imcService.getData(personData); //TODO skip to save data API
+   // this.data = { height: 1.75, weight: 80, bmi: 24.33 };
     this.openModal(this.data);
   }
 

@@ -1,5 +1,5 @@
 <div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">IMC lts</h4>
+  <h4 class="modal-title" id="modal-basic-title">Your IMC results</h4>
   <button type="button" class="btn-close" aria-label="Close"></button>
 </div>
 <div class="modal-body">
@@ -17,7 +17,10 @@
     <label for="imc">IMC</label>
     <p>{{data.bmi}}</p>
   </div>
+  <img class="img-fit" src="assets/bmi.png" alt="BMI schema">
 </div>
 <div class="modal-footer">
+
   <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Save</button>
+
 </div>
