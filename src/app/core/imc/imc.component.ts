@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImcModalComponent } from './imc-modal/imc-modal/imc-modal.component';
 import { IPersonBMI } from './interfaces/IPersonBMI';
 import { ImcService } from './services/imc.service';
+import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-imc',
@@ -15,6 +17,7 @@ export class ImcComponent implements OnInit {
   form!: FormGroup;
   data: IPersonBMI = {} as IPersonBMI;
 
+  faRulerHorizontal = faRulerHorizontal
   closeResult = '';
 
   constructor(
@@ -52,8 +55,11 @@ export class ImcComponent implements OnInit {
 
   private openModal(data: IPersonBMI) {
     const modalRef = this.modalService.open(ImcModalComponent, {
-      ariaLabelledBy: 'modal-basic-title',
+      centered: true,
+      windowClass: 'test'
     });
-    modalRef.componentInstance.data = data;
+    let xx = [];
+    xx.push(data);
+    modalRef.componentInstance.data = xx;
   }
 }

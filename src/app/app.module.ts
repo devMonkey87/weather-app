@@ -11,6 +11,7 @@ import { ImcComponent } from './core/imc/imc.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImcModalComponent } from './core/imc/imc-modal/imc-modal/imc-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MainDashboardComponent,
     CardComponent,
     ImcComponent,
-    ImcModalComponent
+    ImcModalComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

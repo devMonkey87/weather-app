@@ -1,12 +1,28 @@
 @import "./../../../shared/styles/colors";
 
 .modal-title {
-  color: $state-orange;
+  color: $backdrop-color;
+}
+
+.modal-header {
+  background-color: antiquewhite;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+
 }
 
 .img-fit {
   width: 445px;
-
-  
   margin: auto;
+}
+
+.modal-footer {
+  background-color: antiquewhite;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+::ng-deep .modal-content {
+  background-color: rgba(163, 252, 190, 0.99);
+  border-radius: 25px;
 }

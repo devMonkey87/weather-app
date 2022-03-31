@@ -9,7 +9,7 @@ import { IPersonBMI } from '../../interfaces/IPersonBMI';
   styleUrls: ['./imc-modal.component.scss'],
 })
 export class ImcModalComponent implements OnInit {
-  @Input() data: IPersonBMI = {} as IPersonBMI;
+  @Input() data: IPersonBMI[] = [];
   constructor(public activeModal: NgbActiveModal) {}
 
   ngOnInit(): void {}

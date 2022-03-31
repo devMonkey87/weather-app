@@ -3,24 +3,26 @@
   <button type="button" class="btn-close" aria-label="Close"></button>
 </div>
 <div class="modal-body">
-  <div class="mb-3">
-    <label for="height">Height</label>
-    <p>{{data.height}}</p>
-
-  </div>
-  <div class="mb-3">
-    <label for="weight">Weight</label>
-    <p>{{data.weight}}</p>
-
-  </div>
-  <div class="mb-3">
-    <label for="imc">IMC</label>
-    <p>{{data.bmi}}</p>
-  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">BMI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of data; index as i">
+        <td>{{ user.height }}</td>
+        <td>{{ user.weight }}</td>
+        <td>{{ user.bmi | number }}</td>
+      </tr>
+    </tbody>
+  </table>
   <img class="img-fit" src="assets/bmi.png" alt="BMI schema">
 </div>
 <div class="modal-footer">
 
-  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Save</button>
+  <button type="button" class="btn btn-success" (click)="activeModal.close('Close click')">Close</button>
 
 </div>
