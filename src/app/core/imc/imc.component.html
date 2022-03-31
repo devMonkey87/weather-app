@@ -3,14 +3,18 @@
   <form [formGroup]="form">
     <fieldset>
       <fieldset class="form-group">
-        <label for="customRange1" class="form-label">Height range</label>
-        <input type="range" min="0" max="2.50" step="0.01" class="form-range" id="customRange1"
-          formControlName="height">
-        <p>{{form.controls.height.value}} meters</p>
-        <label for="customRange1" class="form-label">Weight range</label>
-        <input type="range" max="300" class="form-range" id="customRange1" formControlName="weight">
-        <p>{{form.controls.weight.value}} kilograms</p>
-
+        <div class="centered-formfields">
+          <label for="customRange1" class="form-label">Height (in meters) </label>
+          <input type="range" min="0" max="2.50" step="0.01" class="form-range" id="customRange1"
+            formControlName="height">
+          <p class="centered">{{form.controls.height.value}} meters <fa-icon [icon]="faRulerHorizontal"></fa-icon>
+          </p>
+          <br>
+          <br>
+          <label for="customRange1" class="form-label">Weight (in Kilograms)</label>
+          <input type="range" max="300" class="form-range" id="customRange1" formControlName="weight">
+          <p class="centered">{{form.controls.weight.value}} kilograms</p>
+        </div>
       </fieldset>
       <div class="right">
         <button type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
