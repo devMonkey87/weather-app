@@ -1,7 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { faRulerHorizontal } from '@fortawesome/free-solid-svg-icons';
+import { faRulerHorizontal, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImcModalComponent } from './imc-modal/imc-modal/imc-modal.component';
 import { IPersonBMI } from './interfaces/IPersonBMI';
@@ -35,6 +35,9 @@ export class ImcComponent implements OnInit {
   data: IPersonBMI = {} as IPersonBMI;
   // icons
   faRulerHorizontal = faRulerHorizontal;
+  faWeightHanging = faWeightHanging;
+
+  
 
   constructor(
     private fb: FormBuilder,
@@ -79,15 +82,5 @@ export class ImcComponent implements OnInit {
     let xx = [];
     xx.push(data);
     modalRef.componentInstance.data = xx;
-  }
-
-  particlesLoaded(container: any): void {
-    console.log(container);
-  }
-
-  particlesInit(main: any): void {
-    console.log(main);
-
-    // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
   }
 }

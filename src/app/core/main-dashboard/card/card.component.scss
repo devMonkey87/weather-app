@@ -1,0 +1,30 @@
+.black {
+    color: black;
+}
+
+.main-card {
+    width: 700px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+
+}
+
+.flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.right-align {
+    float: right;
+}
+
+.picture {
+    height: 450px;
+}
