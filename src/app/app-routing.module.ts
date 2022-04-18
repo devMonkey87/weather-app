@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { ImcComponent } from './core/imc/imc.component';
-import { MainDashboardComponent } from './core/main-dashboard/main-dashboard.component';
 
 const routes: Routes = [
   {

@@ -23,8 +23,7 @@ import { AboutComponent } from './core/about/about.component';
     MainDashboardComponent,
     ImcComponent,
     ImcModalComponent,
-    NavBarComponent,
-    AboutComponent
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
