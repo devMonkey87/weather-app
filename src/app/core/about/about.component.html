@@ -1,10 +1,5 @@
-<div>
-    <svg @slideUpDown id="visual" viewBox="0 0 900 600" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
-        <rect x="0" y="0" width="100%" height="100%" fill="#002233"></rect>
-        <path
-            d="M0 399L21.5 403.2C43 407.3 86 415.7 128.8 421.7C171.7 427.7 214.3 431.3 257.2 424.8C300 418.3 343 401.7 385.8 394.7C428.7 387.7 471.3 390.3 514.2 406.3C557 422.3 600 451.7 642.8 467.8C685.7 484 728.3 487 771.2 470.2C814 453.3 857 416.7 878.5 398.3L900 380L900 601L878.5 601C857 601 814 601 771.2 601C728.3 601 685.7 601 642.8 601C600 601 557 601 514.2 601C471.3 601 428.7 601 385.8 601C343 601 300 601 257.2 601C214.3 601 171.7 601 128.8 601C86 601 43 601 21.5 601L0 601Z"
-            fill="#0066FF" stroke-linecap="round" stroke-linejoin="miter"></path>
-    </svg>
-
+<div class="background">
+  <button type="button" (click)="toggle()">Toggle Open/Close</button>
+  valor {{isOpen}}
+  <p [@slideUpDown]="isOpen ? 'up' : 'down'">esto se ve?</p>
 </div>

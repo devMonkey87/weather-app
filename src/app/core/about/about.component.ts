@@ -1,5 +1,9 @@
 import {
-  animate, style, transition, trigger
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
 } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,12 +13,44 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss'],
   animations: [
     trigger('slideUpDown', [
-      transition(':enter', [style({ height: '100px' }), animate('3s')]),
+      state(
+        'up',
+        style({
+          marginLeft: '700px',
+          marginTop:'-100px',
+          opacity: 0,
+          backgroundColor: 'yellow',
+          width: '300px',
+        })
+      ),
+      state(
+        'down',
+        style({
+          marginTop: '250px',
+          marginLeft: '700px',
+          opacity: 1,
+          backgroundColor: 'blue',
+          width: '300px',
+        })
+      ),
+      transition('up => down', animate('2s ease-out')),
+      transition('down => up', animate('2s ease-in'))
     ]),
   ],
 })
 export class AboutComponent implements OnInit {
   constructor() {}
+  isOpen = true;
 
-  ngOnInit(): void {}
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+
+  ngOnInit(): void {
+    let x = window.location;
+    console.log(
+      '🚀 ~ file: about.component.ts ~ line 22 ~ AboutComponent ~ ngOnInit ~ x',
+      x
+    );
+  }
 }
