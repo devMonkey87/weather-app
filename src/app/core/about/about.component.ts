@@ -17,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
         'up',
         style({
           marginLeft: '700px',
-          marginTop:'-100px',
+          marginTop: '-100px',
           opacity: 0,
           backgroundColor: 'yellow',
           width: '300px',
@@ -33,8 +33,14 @@ import { Component, OnInit } from '@angular/core';
           width: '300px',
         })
       ),
-      transition('up => down', animate('2s ease-out')),
-      transition('down => up', animate('2s ease-in'))
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1000ms', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('1000ms', style({ opacity: 0 })),
+      ]),
     ]),
   ],
 })

@@ -1,5 +1,8 @@
 <div class="background">
   <button type="button" (click)="toggle()">Toggle Open/Close</button>
   valor {{isOpen}}
-  <p [@slideUpDown]="isOpen ? 'up' : 'down'">esto se ve?</p>
+  <p @slideUpDown *ngIf="true">esto se ve?</p>
+
+<h1 class="animate__animated animate__backInLeft">An animated element</h1>
+
 </div>
