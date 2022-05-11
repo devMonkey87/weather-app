@@ -15,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { CardRoutingModule } from './core/main-dashboard/card/card-routing.module';
 import { AboutComponent } from './core/about/about.component';
+import { SharedModule } from './shared/shared/shared.module';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AboutComponent } from './core/about/about.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

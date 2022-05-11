@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { ImcComponent } from './core/imc/imc.component';
+import { TableComponent } from './shared/shared/table/table.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
+    path: 'bitcoin',
+    component: TableComponent,
+  },
+  {
     path: 'weather',
     loadChildren: () =>
       import('./../app/core/main-dashboard/card/card.module').then(
@@ -22,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {enableTracing: true})],
+  imports: [RouterModule.forRoot(routes, {enableTracing: false})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
