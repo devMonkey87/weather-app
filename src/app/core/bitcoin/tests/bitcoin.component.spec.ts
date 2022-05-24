@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BitcoinComponent } from './bitcoin.component';
+import { BitcoinComponent } from '../components/bitcoin.component';
 
 describe('BitcoinComponent', () => {
   let component: BitcoinComponent;

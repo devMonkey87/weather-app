@@ -1,11 +1,8 @@
-
-
 .background {
-  background-image: url(./../../../assets/waves.png);
-  background-repeat: no-repeat;
-
-  width: 1000px;
-  height: 1000px;
-  background-size: contain;
-
+  background: url(./../../../assets/waves.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 800px;
 }

@@ -16,20 +16,18 @@ import { Component, OnInit } from '@angular/core';
       state(
         'up',
         style({
-          marginLeft: '700px',
+          marginLeft: '300px',
           marginTop: '-100px',
           opacity: 0,
-          backgroundColor: 'yellow',
           width: '300px',
         })
       ),
       state(
         'down',
         style({
-          marginTop: '250px',
-          marginLeft: '700px',
+          marginTop: '450px',
+          marginLeft: '100px',
           opacity: 1,
-          backgroundColor: 'blue',
           width: '300px',
         })
       ),
