@@ -1,5 +1,5 @@
 <section class="centered">
-  <table [ngClass]="customTableOptions ? customTableOptions : 'table table-dark table-striped'">
+  <table [ngClass]="customTableClass ? customTableClass : 'table table-dark table-striped'">
     <thead>
       <tr>
         <th scope="col" *ngFor="let column of columnsConfig">{{column.title}}</th>
@@ -12,5 +12,3 @@
     </tbody>
   </table>
 </section>
-
-[ngClass]="step == 'step1' ? 'my_class1' : 'my_class2'"

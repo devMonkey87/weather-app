@@ -1,5 +1,5 @@
 export interface TableColumn {
   title: string;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
