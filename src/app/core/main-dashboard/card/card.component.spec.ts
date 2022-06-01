@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WeatherService } from '../../services/weather/weather.service';
 
 import { CardComponent } from './card.component';
 
@@ -8,6 +9,9 @@ describe('CardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      providers: [
+        {provide: WeatherService, useClass: WeatherServiceMock }
+      ],
       declarations: [ CardComponent ]
     })
     .compileComponents();
@@ -22,4 +26,9 @@ describe('CardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  class WeatherServiceMock {
+
+  }
 });

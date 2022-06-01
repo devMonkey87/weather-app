@@ -59,9 +59,7 @@ export class ImcComponent implements OnInit {
   submit() {
     if (this.form && this.form.valid) {
       this.resultado = 'Todos los datos son válidos';
-
       const personData = this.form.value;
-
       this.test(personData);
     } else {
       this.resultado = 'Hay datos inválidos en el formulario';
@@ -70,7 +68,6 @@ export class ImcComponent implements OnInit {
 
   async test(personData: any) {
     this.data = await this.imcService.getData(personData); //TODO skip to save data API
-    // this.data = { height: 1.75, weight: 80, bmi: 24.33 };
     this.openModal(this.data);
   }
 

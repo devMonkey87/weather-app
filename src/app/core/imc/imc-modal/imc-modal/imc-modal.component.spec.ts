@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { ImcModalComponent } from './imc-modal.component';
 
@@ -8,17 +9,11 @@ describe('ImcModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImcModalComponent ]
-    })
-    .compileComponents();
+      declarations: [ImcModalComponent],
+      providers: [NgbActiveModal],
+    }).compileComponents();
   });
 
-//another test
-
-
-  //test
-
-  //va????
   beforeEach(() => {
     fixture = TestBed.createComponent(ImcModalComponent);
     component = fixture.componentInstance;
