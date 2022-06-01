@@ -16,8 +16,6 @@ export class CardComponent implements OnInit {
   constructor(private weatherService: WeatherService) {}
 
   async ngOnInit(): Promise<void> {
-    await this.weatherService
-      .getData()
-      .then((response) => (this.data = response));
+    this.data = await this.weatherService.getData();
   }
 }
