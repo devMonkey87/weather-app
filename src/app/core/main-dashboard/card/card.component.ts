@@ -1,4 +1,3 @@
-import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { Data } from 'src/app/core/services/weather/constants/interfaces/current-weather';

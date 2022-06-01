@@ -1,16 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BitcoinComponent } from '../components/bitcoin.component';
+import { BitcoinService } from '../services/bitcoin.service';
 
-describe('BitcoinComponent', () => {
+describe('BitcoinComponent',async () => {
   let component: BitcoinComponent;
   let fixture: ComponentFixture<BitcoinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BitcoinComponent ]
-    })
-    .compileComponents();
+      providers: [{ provide: BitcoinService, useClass: BitcoinServiceMock }],
+      declarations: [BitcoinComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -22,4 +24,10 @@ describe('BitcoinComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  class BitcoinServiceMock {
+    getData() {
+      return null;
+    }
+  }
 });
