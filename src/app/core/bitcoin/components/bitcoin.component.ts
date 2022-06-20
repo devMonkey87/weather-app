@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { TableTypes } from 'src/app/shared/shared/table/constants/enums/TableTypes.enum';
-import { TableColumn } from 'src/app/shared/shared/table/constants/interfaces';
+import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
+import { TableColumn } from 'src/app/shared/table/constants/interfaces';
 import { columnConfig } from '../constants';
 import { IBitcoinAction } from '../interfaces/IBitcoinAction';
 import { BitcoinService } from '../services/bitcoin.service';

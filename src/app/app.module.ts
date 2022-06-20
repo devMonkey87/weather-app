@@ -12,9 +12,6 @@ import { ImcComponent } from './core/imc/imc.component';
 import { MainDashboardComponent } from './core/main-dashboard/main-dashboard.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
