@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
-import { BitcoinComponent } from './core/bitcoin/components/bitcoin.component';
 import { ImcComponent } from './core/imc/imc.component';
 
 const routes: Routes = [
