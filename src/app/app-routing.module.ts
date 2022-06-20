@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
-import { BitcoinModule } from './core/bitcoin/bitcoin.module';
-import { BitcoinComponent } from './core/bitcoin/components/bitcoin.component';
 import { ImcComponent } from './core/imc/imc.component';
-import { TableComponent } from './shared/shared/table/table.component';
 
 const routes: Routes = [
   {
@@ -17,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'bitcoin',
-    component: BitcoinComponent,
+    loadChildren: () =>
+      import('./../app/core/bitcoin/bitcoin.module').then(
+        (m) => m.BitcoinModule
+      ),
   },
   {
     path: 'weather',

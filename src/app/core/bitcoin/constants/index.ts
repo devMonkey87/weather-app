@@ -1,5 +1,4 @@
-import { TableColumn } from 'src/app/shared/shared/table/constants/interfaces';
-import { symbolName } from 'typescript';
+import { TableColumn } from 'src/app/shared/table/constants/interfaces';
 
 export const columnConfig = (): TableColumn[] => {
   return [
