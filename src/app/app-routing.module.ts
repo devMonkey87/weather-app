@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { ImcComponent } from './core/imc/imc.component';
+import { ImageViewerComponent } from './shared/image-viewer/image-viewer.component';
 
 const routes: Routes = [
   {
@@ -9,8 +10,8 @@ const routes: Routes = [
     component: ImcComponent,
   },
   {
-    path: 'about',
-    component: AboutComponent,
+    path: 'about',//TODO: deshacer y poner de nuevo el About component
+    component: ImageViewerComponent,
   },
   {
     path: 'bitcoin',
