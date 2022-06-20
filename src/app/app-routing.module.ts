@@ -6,6 +6,10 @@ import { ImageViewerComponent } from './shared/image-viewer/image-viewer.compone
 
 const routes: Routes = [
   {
+    path: 'images',
+    component: ImcComponent,
+  },
+  {
     path: 'imc',
     component: ImcComponent,
   },

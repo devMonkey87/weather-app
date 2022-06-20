@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faRulerHorizontal, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ImcModalComponent } from './imc-modal/imc-modal/imc-modal.component';
+import { ImcModalComponent } from './imc-modal/imc-modal.component';
 import { IPersonBMI } from './interfaces/IPersonBMI';
 import { ImcService } from './services/imc.service';
 

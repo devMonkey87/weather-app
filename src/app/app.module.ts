@@ -7,7 +7,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ImcModalComponent } from './core/imc/imc-modal/imc-modal/imc-modal.component';
+import { ImagesDashboardComponent } from './core/images-dashboard/components/images-dashboard.component';
+import { ImcModalComponent } from './core/imc/imc-modal/imc-modal.component';
 import { ImcComponent } from './core/imc/imc.component';
 import { MainDashboardComponent } from './core/main-dashboard/main-dashboard.component';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
@@ -18,7 +19,8 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
     MainDashboardComponent,
     ImcComponent,
     ImcModalComponent,
-    NavBarComponent
+    NavBarComponent,
+    ImagesDashboardComponent
   ],
   imports: [
     BrowserModule,
