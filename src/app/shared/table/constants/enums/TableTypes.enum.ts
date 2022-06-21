@@ -4,3 +4,9 @@ export enum TableTypes {
   Stripped = 'table table-hover table-striped',
   Dark = 'table  table-hover table-dark table-striped',
 }
+
+export enum TableColumnType {
+  TEXT,
+  BUTTON,
+  IMAGE
+}

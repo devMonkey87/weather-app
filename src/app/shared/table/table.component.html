@@ -7,7 +7,16 @@
     </thead>
     <tbody>
       <tr *ngFor="let element of elementsConfig">
-        <td *ngFor="let col of columnsConfig">{{element[col.id]}}</td>
+        <td *ngFor="let col of columnsConfig">
+          <ng-container [ngSwitch]="col.type">
+            <div *ngSwitchCase=tableColumnTypes.TEXT>
+              {{element[col.id]}}
+            </div>
+            <div *ngSwitchCase=tableColumnTypes.IMAGE>
+              <img class="avatar-img" src="./../../../assets/mickey.png">
+            </div>
+          </ng-container>
+        </td>
       </tr>
     </tbody>
   </table>
