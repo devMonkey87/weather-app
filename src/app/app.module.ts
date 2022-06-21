@@ -19,8 +19,7 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
     MainDashboardComponent,
     ImcComponent,
     ImcModalComponent,
-    NavBarComponent,
-    ImagesDashboardComponent
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

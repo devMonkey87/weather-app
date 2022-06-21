@@ -7,7 +7,10 @@ import { ImageViewerComponent } from './shared/image-viewer/image-viewer.compone
 const routes: Routes = [
   {
     path: 'images',
-    component: ImcComponent,
+    loadChildren: () =>
+    import('./../app/core/images-dashboard/images-dashboard.module').then(
+      (m) => m.ImagesDashboardModule
+    ),
   },
   {
     path: 'imc',
