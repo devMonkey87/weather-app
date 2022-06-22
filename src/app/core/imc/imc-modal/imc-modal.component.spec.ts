@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { IPersonBMI } from '../../interfaces/IPersonBMI';
+import { IPersonBMI } from '../interfaces/IPersonBMI';
 
 import { ImcModalComponent } from './imc-modal.component';
 
