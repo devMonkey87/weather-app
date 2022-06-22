@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TableColumnType } from './constants/enums/TableTypes.enum';
 import { TableColumn } from './constants/interfaces';
 
@@ -12,10 +12,13 @@ export class TableComponent {
   @Input() columnsConfig: TableColumn[] = [];
   @Input() elementsConfig: any = [];
 
+  @Output() elementClick = new EventEmitter<any>();
+
   tableColumnTypes = TableColumnType;
 
   constructor() {}
 
-
-  
+  imageClicked(id: number){
+    this.elementClick.emit(id);
+  }
 }

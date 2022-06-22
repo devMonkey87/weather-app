@@ -2,6 +2,6 @@
     <h1 style="color: red;">Cool description title about the table</h1>
 </header>
 <section class="centered-table">
-    <app-table [customTableClass]="tableStyleClass" [columnsConfig]="tableColumns" [elementsConfig]=" tableElements">
+    <app-table [customTableClass]="tableStyleClass" [columnsConfig]="tableColumns" [elementsConfig]="tableElements" (elementClick)="imageClicked($event)">
     </app-table>
 </section>

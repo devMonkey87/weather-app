@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
+import { PictureService } from '../services/picture.service';
 import { columnConfig } from './constants';
+import {Image } from './../interfaces';
 
 @Component({
   selector: 'app-images-dashboard',
@@ -11,18 +13,24 @@ import { columnConfig } from './constants';
 export class ImagesDashboardComponent implements OnInit {
   public tableStyleClass: TableTypes | undefined;
   public tableColumns: TableColumn[] = [];
-  public tableElements: any[] = [];
-  constructor() {}
+  public tableElements: Image[] = [];
+
+  constructor(private readonly imageService: PictureService) {
+
+  }
 
   ngOnInit(): void {
-    console.log('hast aqy')
     this.setupTable();
   }
 
-  private setupTable() {
+  private async setupTable() {
     this.tableColumns = columnConfig();
     this.tableStyleClass = TableTypes.Basic;
     //TODO: check to adapt table component for supporting images/ icons as table elements
-    this.tableElements = [{"id": 1, "description": "sds" , "image": "d"}]
+    this.tableElements = await this.imageService.getAllImages();
+  }
+
+  public imageClicked(imageId: number) {
+    console.log(imageId)
   }
 }

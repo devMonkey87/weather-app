@@ -8,12 +8,13 @@
     <tbody>
       <tr *ngFor="let element of elementsConfig">
         <td *ngFor="let col of columnsConfig">
+          <!-- Switch for adapting the view to the type of column we expect -->
           <ng-container [ngSwitch]="col.type">
             <div *ngSwitchCase=tableColumnTypes.TEXT>
               {{element[col.id]}}
             </div>
             <div *ngSwitchCase=tableColumnTypes.IMAGE>
-              <img class="avatar-img" src="./../../../assets/mickey.png">
+              <img class="avatar-img" src="./../../../assets/mickey.png" (click)="imageClicked(element.id)">
             </div>
           </ng-container>
         </td>

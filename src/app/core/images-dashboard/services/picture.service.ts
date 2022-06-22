@@ -1,9 +1,13 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import {Image} from './../interfaces';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PictureService {
+  constructor(private readonly http: HttpClient) {}
 
-  constructor() { }
+  public getAllImages(): Promise<Image[]>{
+    return of([{ id: 1, description: 'sds', image: 'imagen' }]).toPromise();
+  }
 }
