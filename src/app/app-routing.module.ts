@@ -17,8 +17,8 @@ const routes: Routes = [
     component: ImcComponent,
   },
   {
-    path: 'about',//TODO: deshacer y poner de nuevo el About component
-    component: ImageViewerComponent,
+    path: 'about',
+    component: AboutComponent,
   },
   {
     path: 'bitcoin',

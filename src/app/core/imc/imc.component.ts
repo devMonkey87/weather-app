@@ -67,17 +67,14 @@ export class ImcComponent implements OnInit {
   }
 
   async test(personData: any) {
-    this.data = await this.imcService.getData(personData); //TODO skip to save data API
+    this.data = await this.imcService.getData(personData);
     this.openModal(this.data);
   }
 
   private openModal(data: IPersonBMI) {
     const modalRef = this.modalService.open(ImcModalComponent, {
-      centered: true,
-      windowClass: 'test',
+      centered: true
     });
-    let xx = [];
-    xx.push(data);
-    modalRef.componentInstance.data = xx;
+    modalRef.componentInstance.data = Array.of(data);
   }
 }
