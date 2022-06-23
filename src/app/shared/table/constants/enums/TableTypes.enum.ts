@@ -8,5 +8,6 @@ export enum TableTypes {
 export enum TableColumnType {
   TEXT,
   BUTTON,
-  IMAGE
+  IMAGE,
+  CHECKBOX
 }
