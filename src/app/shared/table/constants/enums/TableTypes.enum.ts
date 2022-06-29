@@ -9,5 +9,6 @@ export enum TableColumnType {
   TEXT,
   BUTTON,
   IMAGE,
-  CHECKBOX
+  CHECKBOX,
+  OTHER
 }
