@@ -6,6 +6,3 @@ export interface TableColumn {
   type: TableColumnType;
   isDisabled?: boolean;
 }
-
-
-
