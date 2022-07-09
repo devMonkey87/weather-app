@@ -11,7 +11,6 @@ export class TableComponent {
   @Input() customTableClass: string | undefined;
   @Input() columnsConfig: TableColumn[] = [];
   @Input() elementsConfig: any = [];
-
   @Output() elementClick = new EventEmitter<any>();
 
   tableColumnTypes = TableColumnType;
