@@ -8,6 +8,6 @@ export class PictureService {
   constructor(private readonly http: HttpClient) {}
 
   public getAllImages(): Promise<Image[]>{
-    return of([{ id: 1, description: 'sds', image: 'imagen' }]).toPromise();
+    return of([{ id: 1, description: 'New element', image: 'imagen' }]).toPromise();
   }
 }

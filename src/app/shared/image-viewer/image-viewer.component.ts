@@ -11,8 +11,7 @@ export class ImageViewerComponent implements OnInit {
   @Input() base64Image: string = "";
 
 
-  //TODO: add buttons for selecting or cancel picture displayed. If selected, output the selected button and mark the checkbox in 
-  //table component
+  //TODO: add buttons for selecting or cancel picture displayed. If selected, output the selected button and mark the checkbox in table component
 
   base64ImageMock = "";
   ngOnInit(): void {}
