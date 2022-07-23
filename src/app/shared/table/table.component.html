@@ -13,11 +13,13 @@
             <div *ngSwitchCase=tableColumnTypes.TEXT>
               {{element[col.id]}}
             </div>
-            <div *ngSwitchCase=tableColumnTypes.IMAGE>
-              <img class="avatar-img" src="./../../../assets/mickey.png" (click)="imageClicked(element.id)">
+            <div *ngSwitchCase=tableColumnTypes.IMAGE class="image-container">
+              <img class="avatar-img" src="{{ interpolateImgSource(element.image) }}" (click)="imageClicked(element.id)" pTooltip="Click to preview">
+            </div>
+            <div *ngSwitchCase=tableColumnTypes.CHECKBOX>
+              <p-checkbox [(ngModel)]="selected" [binary]="true" inputId="binary"></p-checkbox>
             </div>
           </ng-container>
-          <input type="checkbox" value="id_number">
         </td>
       </tr>
     </tbody>

@@ -12,6 +12,7 @@ export class TableComponent {
   @Input() columnsConfig: TableColumn[] = [];
   @Input() elementsConfig: any = [];
   @Output() elementClick = new EventEmitter<any>();
+  @Output() selected = new EventEmitter<boolean>();
 
   tableColumnTypes = TableColumnType;
 
@@ -19,5 +20,10 @@ export class TableComponent {
 
   imageClicked(id: number){
     this.elementClick.emit(id);
+  }
+
+  interpolateImgSource(element: string) {
+     console.log("hey", `'data:image/png;base64, '${element}`);
+    return `'data:image/png;base64, '${element}`;
   }
 }
