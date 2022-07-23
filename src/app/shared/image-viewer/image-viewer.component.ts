@@ -14,10 +14,7 @@ export class ImageViewerComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //Call this method in the image source, it will sanitize it.
-  //TODO: cambiar por lo recuperado del servicio backend
   transform() {
-    this.base64Image = `'data:image/png;base64,'${this.base64Image}`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.base64Image);
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64,${this.base64Image}`);
   }
 }

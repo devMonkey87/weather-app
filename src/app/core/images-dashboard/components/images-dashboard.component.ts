@@ -3,7 +3,7 @@ import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
 import { PictureService } from '../services/picture.service';
 import { columnConfig } from './constants';
-import {Image } from './../interfaces';
+import { Image } from './../interfaces';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImageViewerComponent } from 'src/app/shared/image-viewer/image-viewer.component';
 
@@ -17,9 +17,10 @@ export class ImagesDashboardComponent implements OnInit {
   public tableColumns: TableColumn[] = [];
   public tableElements: Image[] = [];
 
-  constructor(private readonly imageService: PictureService, private modalService: NgbModal) {
-
-  }
+  constructor(
+    private readonly imageService: PictureService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.setupTable();
@@ -31,9 +32,8 @@ export class ImagesDashboardComponent implements OnInit {
     this.tableElements = await this.imageService.getAllImages();
   }
 
-  public imageClicked(imageId: number) {
-    console.log(imageId);
-    this.openModal("");//TODO: change this value for the String base64 representation of the picture retrieved from table
+  public imageClicked(element: any) {
+    this.openModal(element.image); //TODO: change this value for the String base64 representation of the picture retrieved from table
   }
 
   private openModal(base64File: string) {

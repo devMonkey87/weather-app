@@ -26,7 +26,6 @@ export const columnConfig = (): TableColumn[] => {
     },
   ];
 };
-//TODO: add URL from backend
 export const URL = 'https://binance43.p.rapidapi.com/ticker/24hr';
 export const IMAGES_URL = `${LOCALHOST_BASE_URL}${'files'}`;
 
