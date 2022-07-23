@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
+
 export class PersonBMIModel {
   private _data: any;
 
