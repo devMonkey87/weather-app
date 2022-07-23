@@ -7,7 +7,7 @@ import { Image } from './../interfaces';
 export class PictureService {
   constructor(private readonly http: HttpClient) {}
 
-  public getAllImages(): Promise<Image[]> {
-    return this.http.get<Image[]>(IMAGES_URL).toPromise();
+  public async getAllImages(): Promise<Image[]> {
+    return await this.http.get<Image[]>(IMAGES_URL).toPromise();
   }
 }

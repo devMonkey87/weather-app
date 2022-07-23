@@ -18,12 +18,11 @@ export class TableComponent {
 
   constructor() {}
 
-  imageClicked(id: number){
-    this.elementClick.emit(id);
+  imageClicked(element: any) {
+    this.elementClick.emit(element);
   }
 
   interpolateImgSource(element: string) {
-     console.log("hey", `'data:image/png;base64, '${element}`);
-    return `'data:image/png;base64, '${element}`;
+    return `data:image/png;base64,${element}`;
   }
 }
