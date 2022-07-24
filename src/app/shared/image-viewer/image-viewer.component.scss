@@ -1,17 +1,18 @@
 .centered {
-    width: auto;
-    height: auto;
-    margin-left: 40px;
+    display: block;
+    margin: 20px 40px;
 }
 
 .bottom-buttons {
-    float: right;
+    max-width: 100px;
+    margin: 10px 100px
+}
 
+.modal-title {
+    color: black;
 }
 
 .space-between-button {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
 }
