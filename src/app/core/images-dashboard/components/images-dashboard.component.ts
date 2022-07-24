@@ -39,6 +39,8 @@ export class ImagesDashboardComponent implements OnInit {
   private openModal(base64File: string) {
     const modalRef = this.modalService.open(ImageViewerComponent, {
       centered: true,
+      size: 'sm',
+      backdrop: true
     });
     modalRef.componentInstance.base64Image = base64File;
   }

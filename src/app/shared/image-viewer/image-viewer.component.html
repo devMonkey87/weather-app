@@ -1,10 +1,14 @@
-<div>
+<section>
+    <div class="modal-header">
+        <h4 class="modal-title">Selected Pokémon</h4>
+        <button type="button" class="btn-close" aria-label="Close"></button>
+      </div>
     <img [src]="transform()" class="centered">
     <footer class="bottom-buttons">
         <div class="space-between-button">
-            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"></button>
-            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"></button>
+            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded p-button-success"></button>
+            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
         </div>
     </footer>
-</div>
+</section>
 
