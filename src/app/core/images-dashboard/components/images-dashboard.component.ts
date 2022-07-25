@@ -43,5 +43,9 @@ export class ImagesDashboardComponent implements OnInit {
       backdrop: true
     });
     modalRef.componentInstance.base64Image = base64File;
+
+    modalRef.result.then((res)=> console.log('lll', res));
+
+    
   }
 }

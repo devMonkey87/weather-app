@@ -6,9 +6,8 @@
     <img [src]="transform()" class="centered">
     <footer class="bottom-buttons">
         <div class="space-between-button">
-            <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded p-button-success"></button>
-            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
+            <button pButton pRipple type="button" icon="pi pi-check" ngbAutofocus class="p-button-rounded p-button-success" (click)="onSelection(true)"></button>
+            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger" (click)="onSelection(false)"></button>
         </div>
     </footer>
 </section>
-
