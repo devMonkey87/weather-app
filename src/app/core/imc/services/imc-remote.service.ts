@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { RAPID_API_HOST, RAPID_API_KEY, RAPID_API_KEY_PASSWORD,  } from 'src/app/shared/constants';
 import { IPersonBMI } from '../interfaces/IPersonBMI';
 
 @Injectable({
@@ -15,13 +16,10 @@ export class ImcRemoteService {
 
     let headers = new HttpHeaders();
     headers = headers.append(
-      'X-RapidAPI-Host',
-      'body-mass-index-bmi-calculator.p.rapidapi.com'
+      RAPID_API_HOST,
+      'body-mass-index-bmi-calculator.p.rapidapi.com' //TODO Create constant for holding api web services (bmi, etc)
     );
-    headers = headers.append(
-      'X-RapidAPI-Key',
-      '94ee14ffabmshfbfd83af1fe237ep166202jsn5bd8d48365f2'
-    );
+    headers = headers.append(RAPID_API_KEY, RAPID_API_KEY_PASSWORD);
 
     return this.http
       .get<IPersonBMI>(
