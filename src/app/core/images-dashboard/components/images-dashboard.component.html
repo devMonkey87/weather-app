@@ -1,6 +1,9 @@
-<header>
-    <h1 style="color: red;">Cool description title about the table</h1>
+<header class="header">
+    <h1 class="headline">Cool description title about the table</h1>
 </header>
+<section class="right-aligned-button">
+    <button pButton pRipple type="button" label="Add" class="p-button-raised"></button>
+</section>
 <section class="centered-table">
     <app-table [customTableClass]="tableStyleClass" [columnsConfig]="tableColumns" [elementsConfig]="tableElements"
         (elementClick)="imageClicked($event)">

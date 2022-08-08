@@ -1,3 +1,18 @@
+@import "./../../shared/styles/colors"; 
+
 .centered-table {
     margin: 2em;
+}
+
+.right-aligned-button {
+    float: right;
+    margin-right: 40px;
+}
+
+.headline {
+    color: $grey-darker-color;
+}
+
+.header {
+    margin: 25px 30px;
 }

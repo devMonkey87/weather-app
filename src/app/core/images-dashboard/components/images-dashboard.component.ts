@@ -32,8 +32,8 @@ export class ImagesDashboardComponent implements OnInit {
     this.tableElements = await this.imageService.getAllImages();
   }
 
-  public imageClicked(element: any) {
-    this.openModal(element.image); //TODO: change this value for the String base64 representation of the picture retrieved from table
+  public imageClicked(base64Image: string) {
+    this.openModal(base64Image);
   }
 
   private openModal(base64File: string) {

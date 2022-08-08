@@ -11,6 +11,6 @@ import {TooltipModule} from 'primeng/tooltip';
 @NgModule({
   declarations: [TableComponent, ImageViewerComponent],
   imports: [CommonModule, ButtonModule, CheckboxModule, FormsModule, TooltipModule],
-  exports: [TableComponent, ImageViewerComponent],
+  exports: [TableComponent, ImageViewerComponent, ButtonModule],
 })
 export class SharedModule {}

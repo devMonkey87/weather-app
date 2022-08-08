@@ -30,7 +30,6 @@ describe('ImcComponent', () => {
   });
 
   it('should create', () => {
-    console.log('aaa', component)
     expect(component).toBeTruthy();
   });
 

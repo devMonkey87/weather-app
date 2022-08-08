@@ -14,7 +14,7 @@
               {{element[col.id]}}
             </div>
             <div *ngSwitchCase=tableColumnTypes.IMAGE class="image-container">
-              <img class="avatar-img" src="{{ interpolateImgSource(element.image) }}" (click)="imageClicked(element)" pTooltip="Click to preview">
+              <img class="avatar-img" src="{{ interpolateImgSource(element.image) }}" (click)="imageClicked(element.image)" pTooltip="Click to preview">
             </div>
             <div *ngSwitchCase=tableColumnTypes.CHECKBOX>
               <p-checkbox [(ngModel)]="selected" [binary]="true" inputId="binary"></p-checkbox>
