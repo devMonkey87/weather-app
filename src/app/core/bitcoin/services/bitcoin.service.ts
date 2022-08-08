@@ -1,6 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import {
+  RAPID_API_BITCOIN_HOST_VALUE,
+  RAPID_API_HOST,
+  RAPID_API_KEY,
+  RAPID_API_KEY_PASSWORD,
+} from 'src/app/shared/constants';
 import { BITCOINS_URL } from '../constants';
 
 @Injectable({
@@ -11,12 +16,9 @@ export class BitcoinService {
 
   public async getData() {
     const headers = new HttpHeaders()
-      .set('X-RapidAPI-Host', 'binance43.p.rapidapi.com')
-      .set(
-        'X-RapidAPI-Key',
-        '94ee14ffabmshfbfd83af1fe237ep166202jsn5bd8d48365f2'
-      );
-     return await this.http.get<any[]>(BITCOINS_URL, { headers }).toPromise();
+      .set(RAPID_API_HOST, RAPID_API_BITCOIN_HOST_VALUE)
+      .set(RAPID_API_KEY, RAPID_API_KEY_PASSWORD);
+    return await this.http.get<any[]>(BITCOINS_URL, { headers }).toPromise();
     // return of([
     //   {
     //     symbol: 'OOKIUSDT',
