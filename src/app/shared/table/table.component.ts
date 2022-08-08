@@ -12,18 +12,18 @@ export class TableComponent {
   @Input() columnsConfig: TableColumn[] = [];
   @Input() elementsConfig: any = [];
   
-  @Output() elementClick = new EventEmitter<any>();
+  @Output() elementClick = new EventEmitter<string>();
   @Output() selected = new EventEmitter<boolean>();
 
   tableColumnTypes = TableColumnType;
 
   constructor() {}
 
-  imageClicked(element: any) {
-    this.elementClick.emit(element);
+  imageClicked(image: any) {
+    this.elementClick.emit(image);
   }
 
-  interpolateImgSource(element: string) {
-    return `data:image/png;base64,${element}`;
+  interpolateImgSource(image: string) {
+    return `data:image/png;base64,${image}`;
   }
 }

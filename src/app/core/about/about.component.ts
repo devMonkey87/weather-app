@@ -42,19 +42,11 @@ import { Component, OnInit } from '@angular/core';
     ]),
   ],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   constructor() {}
   isOpen = true;
 
   toggle() {
     this.isOpen = !this.isOpen;
-  }
-
-  ngOnInit(): void {
-    let x = window.location;
-    console.log(
-      '🚀 ~ file: about.component.ts ~ line 22 ~ AboutComponent ~ ngOnInit ~ x',
-      x
-    );
   }
 }

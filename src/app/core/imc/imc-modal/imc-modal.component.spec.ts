@@ -22,9 +22,8 @@ describe('ImcModalComponent', () => {
   });
 
   it('should create', () => {
-    let x :IPersonBMI[] = [{height: 2, weight: 3}];
-    component.data = x;
-    console.log('aaa', component)
+    let personBMI: IPersonBMI[] = [{ height: 2, weight: 3 }];
+    component.data = personBMI;
     expect(component).toBeTruthy();
   });
 });
