@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
-import { columnConfig } from '../constants';
+import { columnConfig, mapBitcoinData } from '../constants';
 import { IBitcoinAction } from '../interfaces/IBitcoinAction';
 import { BitcoinService } from '../services/bitcoin.service';
 
@@ -23,22 +23,13 @@ export class BitcoinComponent implements OnInit {
 
   setupTable() {
     this.tableColumns = columnConfig();
-    this.bitcoinService.getData().then(
-      (bitcoin) =>
-        (this.tableElements = bitcoin.map((bitcoinAction) => {
-          const openTimeDate = new Date(bitcoinAction.openTime);
-          const closeTimeDate = new Date(bitcoinAction.closeTime);
-          const bAction: IBitcoinAction = {
-            openTime: openTimeDate.toLocaleDateString('en-GB'),
-            closeTime: closeTimeDate.toLocaleDateString('en-GB'),
-            openPrice: bitcoinAction.openPrice,
-            lastPrice: bitcoinAction.lastPrice,
-            symbol: bitcoinAction.symbol,
-            priceChangePercent: bitcoinAction.priceChangePercent,
-          }; //TODO: make it more efficient with restOfProperties assignation, only date 
-          // properties need to be adapted
-          return bAction;
-        }))
-    );
+    this.bitcoinService
+      .getData()
+      .then(
+        (bitcoin) =>
+          (this.tableElements = bitcoin.map((bitcoinAction) =>
+            mapBitcoinData(bitcoinAction)
+          ))
+      );
   }
 }
