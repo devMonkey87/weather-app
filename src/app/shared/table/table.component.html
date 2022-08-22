@@ -17,7 +17,8 @@
               <img class="avatar-img" src="{{ interpolateImgSource(element.image) }}" (click)="imageClicked(element.image)" pTooltip="Click to preview">
             </div>
             <div *ngSwitchCase=tableColumnTypes.CHECKBOX>
-              <p-checkbox [(ngModel)]="selected" [binary]="true" inputId="binary"></p-checkbox>
+              
+              <p-checkbox [(ngModel)]="element.isSelected" [binary]="true" inputId="binary"></p-checkbox>
             </div>
           </ng-container>
         </td>

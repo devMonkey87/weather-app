@@ -9,7 +9,12 @@
 }
 
 .modal-title {
-    color: black;
+    color: white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+.modal-header {
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
 }
 
 .space-between-button {
