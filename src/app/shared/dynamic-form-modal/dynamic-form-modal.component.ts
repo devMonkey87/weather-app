@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DynamicFormModalComponent implements OnInit {
 
+  // Add Input Form for iterating them controls and create the different input elements
+
   constructor() { }
 
   ngOnInit(): void {

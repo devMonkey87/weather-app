@@ -6,6 +6,7 @@ import { columnConfig, elementsConfig } from './constants';
 import { Image } from './../interfaces';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImageViewerComponent } from 'src/app/shared/image-viewer/image-viewer.component';
+import { DynamicFormModalComponent } from 'src/app/shared/dynamic-form-modal/dynamic-form-modal.component';
 
 @Component({
   selector: 'app-images-dashboard',
@@ -29,7 +30,7 @@ export class ImagesDashboardComponent implements OnInit {
   private async setupTable() {
     this.tableColumns = columnConfig();
     this.tableStyleClass = TableTypes.Basic;
-    this.tableElements = elementsConfig(await this.imageService.getAllImages()) ;
+    this.tableElements = elementsConfig(await this.imageService.getAllImages());
   }
 
   public imageClicked(base64Image: string) {
@@ -40,12 +41,17 @@ export class ImagesDashboardComponent implements OnInit {
     const modalRef = this.modalService.open(ImageViewerComponent, {
       centered: true,
       size: 'sm',
-      backdrop: true
+      backdrop: true,
     });
     modalRef.componentInstance.base64Image = base64File;
 
-    modalRef.result.then((res)=> console.log('lll', res));
+    modalRef.result.then((res) => console.log('lll', res));
+  }
 
-    
+  public openDialog() {
+    const modalRef = this.modalService.open(DynamicFormModalComponent, {
+      centered: true,
+      backdrop: true,
+    });
   }
 }
