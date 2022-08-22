@@ -2,7 +2,7 @@
     <h1 class="headline">Pick your desired Pokémon</h1>
 </header>
 <section class="right-aligned-button">
-    <button pButton pRipple type="button" label="Add" class="p-button-raised"></button>
+    <button pButton pRipple type="button" label="Add" class="p-button-raised" (click)="openDialog()"></button>
 </section>
 <section class="centered-table">
     <app-table [customTableClass]="tableStyleClass" [columnsConfig]="tableColumns" [elementsConfig]="tableElements"
