@@ -1,13 +1,14 @@
 import { LOCALHOST_BASE_URL } from 'src/app/shared/constants';
 import { TableColumnType } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
+import { Image } from '../../interfaces';
 
 export const columnConfig = (): TableColumn[] => {
   return [
     {
       id: 'id',
       label: 'ID',
-      type: TableColumnType.TEXT
+      type: TableColumnType.TEXT,
     },
     {
       id: 'description',
@@ -26,7 +27,11 @@ export const columnConfig = (): TableColumn[] => {
     },
   ];
 };
+
+export const elementsConfig = (items: Image[]): any[] => {
+  items.map((item) => (item.isSelected = false));
+  return items;
+};
+
 export const URL = 'https://binance43.p.rapidapi.com/ticker/24hr';
 export const IMAGES_URL = `${LOCALHOST_BASE_URL}${'files'}`;
-
-

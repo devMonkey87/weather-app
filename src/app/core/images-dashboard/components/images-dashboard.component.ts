@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
 import { PictureService } from '../services/picture.service';
-import { columnConfig } from './constants';
+import { columnConfig, elementsConfig } from './constants';
 import { Image } from './../interfaces';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImageViewerComponent } from 'src/app/shared/image-viewer/image-viewer.component';
@@ -29,7 +29,7 @@ export class ImagesDashboardComponent implements OnInit {
   private async setupTable() {
     this.tableColumns = columnConfig();
     this.tableStyleClass = TableTypes.Basic;
-    this.tableElements = await this.imageService.getAllImages();
+    this.tableElements = elementsConfig(await this.imageService.getAllImages()) ;
   }
 
   public imageClicked(base64Image: string) {
