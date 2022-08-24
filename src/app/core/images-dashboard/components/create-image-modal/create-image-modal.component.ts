@@ -10,6 +10,8 @@ export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
   form!: FormGroup;
 
+  cities = ["a", "b"]
+
   constructor(private readonly fb: FormBuilder) {}
 
   ngOnInit(): void {
