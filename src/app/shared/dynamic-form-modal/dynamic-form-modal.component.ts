@@ -9,7 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DynamicFormModalComponent implements OnInit {
   @Input() form!: FormGroup;
 
-  size: string[] = [];
+  inputControls: string[] = [];
+
+  uploadedFiles: any[] = [];
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -22,11 +25,25 @@ export class DynamicFormModalComponent implements OnInit {
       image: ['', Validators.required],
     });
 
-    this.size = Object.keys(this.form.controls);
-    console.log(this.size);
+    this.inputControls = Object.keys(this.form.controls);
   }
 
   public test() {
-    console.log(this.form.value)
+    console.log(this.form.value);
+  }
+
+  public onBasicUploadAuto(event: any) {
+    console.log("fichero", event);
+      for (let file of event.files) {
+        this.uploadedFiles.push(file);
+        console.log("🚀 ~ file: dynamic-form-modal.component.ts ~ line 39 ~ DynamicFormModalComponent ~ onBasicUploadAuto ~ uploadedFiles", this.uploadedFiles)
+
+        const reader = new FileReader();
+        reader.readAsDataURL(this.uploadedFiles[0]);
+        reader.onload = () => {
+          console.log(reader.result);
+        };
+        
+      }
   }
 }

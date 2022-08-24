@@ -1,20 +1,22 @@
 <section>
     <header>
-    <form [formGroup]="form">
-        <div class="p-grid p-fluid">
-            <div class="p-col-12 p-md-4">
-                <div class="p-inputgroup" *ngFor="let x of size">
-                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                    <input type="text" pInputText placeholder={{x}} formControlName="{{x}}">
+        <form [formGroup]="form">
+            <div class="p-grid p-fluid">
+                <div class="p-col-12 p-md-4">
+                    <div class="p-inputgroup" *ngFor="let x of inputControls">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" pInputText placeholder={{x}} formControlName="{{x}}">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+            <div>
 
+                <p-fileUpload name="myfile[]" [customUpload]="true" (uploadHandler)="onBasicUploadAuto($event)" accept="image/*" [auto]="true"></p-fileUpload>
+
+            </div>
+        </form>
     </header>
-
     <footer>
-        <button (click)="test()">Hey</button>
+        <button pButton type="button" label="Save" (click)="test()"></button>
     </footer>
-
 </section>
