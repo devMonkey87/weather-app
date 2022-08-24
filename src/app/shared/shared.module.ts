@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import {TooltipModule} from 'primeng/tooltip';
+import { FileUploadModule } from 'primeng/fileupload';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import {TooltipModule} from 'primeng/tooltip';
     FormsModule,
     TooltipModule,
     ReactiveFormsModule,
+    FileUploadModule,
   ],
   exports: [
     TableComponent,
     ImageViewerComponent,
     ButtonModule,
     DynamicFormModalComponent,
+    FileUploadModule,
   ],
 })
 export class SharedModule {}
