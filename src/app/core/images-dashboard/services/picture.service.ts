@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { IMAGES_URL } from '../components/constants';
+import { IMAGES_URL } from '../constants';
 import { Image } from './../interfaces';
 
 @Injectable()

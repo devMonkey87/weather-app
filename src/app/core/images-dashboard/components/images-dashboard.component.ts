@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
-import { TableColumn } from 'src/app/shared/table/constants/interfaces';
-import { PictureService } from '../services/picture.service';
-import { columnConfig, elementsConfig } from './constants';
-import { Image } from './../interfaces';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImageViewerComponent } from 'src/app/shared/image-viewer/image-viewer.component';
-import { DynamicFormModalComponent } from 'src/app/shared/dynamic-form-modal/dynamic-form-modal.component';
+import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
+import { TableColumn } from 'src/app/shared/table/constants/interfaces';
+import { columnConfig, elementsConfig } from '../constants';
+import { PictureService } from '../services/picture.service';
+import { Image } from './../interfaces';
+import { CreateImageModalComponent } from './create-image-modal/create-image-modal.component';
 
 @Component({
   selector: 'app-images-dashboard',
@@ -49,7 +49,7 @@ export class ImagesDashboardComponent implements OnInit {
   }
 
   public openDialog() {
-    const modalRef = this.modalService.open(DynamicFormModalComponent, {
+    const modalRef = this.modalService.open(CreateImageModalComponent, {
       centered: true,
       backdrop: true,
     });

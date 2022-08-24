@@ -5,13 +5,14 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 import { TableComponent } from './table/table.component';
 import { DynamicFormModalComponent } from './dynamic-form-modal/dynamic-form-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //Prime NG
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import {TooltipModule} from 'primeng/tooltip';
 import { FileUploadModule } from 'primeng/fileupload';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,14 +27,14 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     TooltipModule,
     ReactiveFormsModule,
-    FileUploadModule,
+    FileUploadModule
   ],
   exports: [
     TableComponent,
     ImageViewerComponent,
     ButtonModule,
     DynamicFormModalComponent,
-    FileUploadModule,
+    FileUploadModule
   ],
 })
 export class SharedModule {}

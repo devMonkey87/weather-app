@@ -1,7 +1,7 @@
 import { LOCALHOST_BASE_URL } from 'src/app/shared/constants';
 import { TableColumnType } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
-import { Image } from '../../interfaces';
+import { Image } from '../interfaces';
 
 export const columnConfig = (): TableColumn[] => {
   return [
