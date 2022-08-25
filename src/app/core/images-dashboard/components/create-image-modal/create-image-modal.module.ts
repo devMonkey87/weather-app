@@ -1,11 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateImageModalComponent } from './create-image-modal.component';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FileUploadModule } from 'primeng/fileupload';
 import { DropdownModule } from 'primeng/dropdown';
-
-
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputTextModule } from 'primeng/inputtext';
+import { CreateImageModalComponent } from './create-image-modal.component';
 
 @NgModule({
   declarations: [CreateImageModalComponent],
@@ -15,6 +14,7 @@ import { DropdownModule } from 'primeng/dropdown';
     FileUploadModule,
     FormsModule,
     DropdownModule,
+    InputTextModule,
   ],
   exports: [CreateImageModalComponent],
 })
