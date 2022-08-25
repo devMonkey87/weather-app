@@ -12,9 +12,9 @@ import { DropdownModule } from 'primeng/dropdown';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-   // FileUploadModule,
+    FileUploadModule,
     FormsModule,
-   // DropdownModule,
+    DropdownModule,
   ],
   exports: [CreateImageModalComponent],
 })
