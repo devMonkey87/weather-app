@@ -1,5 +1,11 @@
 <section>
     <header>
+
+        <h1>Insert Pokémon data</h1>
+
+    </header>
+
+    <div>
         <form [formGroup]="form">
             <div class="p-grid p-fluid">
                 <div class="p-col-12 p-md-4">
@@ -16,14 +22,8 @@
                 </div>
                 <div class="p-col-12 p-md-4">
                     <div class="col">
-                        <div ngbDropdown class="d-inline-block">
-                            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                <button ngbDropdownItem>Action - 1</button>
-                                <button ngbDropdownItem>Another Action</button>
-                                <button ngbDropdownItem>Something else is here</button>
-                            </div>
-                        </div>
+                        <p-dropdown [options]="cities" optionLabel="name"></p-dropdown>
+
                     </div>
                 </div>
             </div>
@@ -32,10 +32,12 @@
                     accept="image/*" [auto]="true"></p-fileUpload>
             </div>
         </form>
-    </header>
+    </div>
     <footer>
         <button pButton type="button" label="Save" (click)="test()"></button>
         <button pButton type="button" label="Save" (click)="test()"></button>
 
     </footer>
+
+
 </section>
