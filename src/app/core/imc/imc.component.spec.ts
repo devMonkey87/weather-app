@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -16,7 +16,7 @@ describe('ImcComponent', () => {
       declarations: [ImcComponent],
       imports: [BrowserAnimationsModule],
       providers: [
-        { provide: FormBuilder, useClass: FormBuilderMock },
+        { provide: UntypedFormBuilder, useClass: FormBuilderMock },
         { provide: ImcService, useClass: ImcServiceMock },
         { provide: NgbActiveModal, useClass: NgbActiveModalMock },
       ],

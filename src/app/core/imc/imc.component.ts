@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { faRulerHorizontal, faWeightHanging } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImcModalComponent } from './imc-modal/imc-modal.component';
@@ -31,7 +31,7 @@ import { ImcService } from './services/imc.service';
 })
 export class ImcComponent implements OnInit {
   resultado: string = ''; //FIXME mejorar error messages
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   data: IPersonBMI = {} as IPersonBMI;
   // icons
   faRulerHorizontal = faRulerHorizontal;
@@ -40,7 +40,7 @@ export class ImcComponent implements OnInit {
   
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private imcService: ImcService,
     private modalService: NgbModal
   ) {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-image-modal',
@@ -8,11 +8,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   cities = ["a", "b"]
 
-  constructor(private readonly fb: FormBuilder) {}
+  constructor(private readonly fb: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
