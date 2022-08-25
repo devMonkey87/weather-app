@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CreateImageModalComponent } from './create-image-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FileUploadModule } from 'primeng/fileupload';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 
 @NgModule({
@@ -11,11 +12,10 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FileUploadModule,
+   // FileUploadModule,
     FormsModule,
-    NgbDropdownModule
+   // DropdownModule,
   ],
   exports: [CreateImageModalComponent],
 })
-
-export class CreateImageModalModule{}
+export class CreateImageModalModule {}
