@@ -1,25 +1,20 @@
 <section>
-    <header>
-        <h1>Insert Pokémon data</h1>
+    <header class="flex card-container indigo-container bg-indigo-500">
+        <h1
+            class="flex-auto h-4rem  text-white font-bold p-col-12 border-round flex align-items-center justify-content-center">
+            Insert Pokémon data</h1>
     </header>
-    <div class="flex flex-column">
+    <section class="flex flex-column">
         <form [formGroup]="form">
             <div>
                 <div
                     class="flex align-items-center justify-content-center h-4rem bg-green-100 font-bold text-white border-round m-2">
-                    <div class="fadeinleft animation-duration-1000 animation-iteration-1 flex align-items-center justify-content-center
-         font-bold bg-blue-500 text-white border-round m-2 px-5 py-3">
+                    <div class="fadeinleft animation-duration-1000 animation-iteration-1 border-round m-2 px-5 py-3">
                         <input type="text" pInputText placeholder="name" formControlName="name">
                     </div>
                 </div>
                 <div
-                    class="flex align-items-center justify-content-center h-4rem bg-green-100 font-bold text-white border-round m-2">
-                    <div class="fadeinleft animation-duration-1000 animation-delay-1000 animation-iteration-1">
-                        <input type="text" pInputText placeholder="test" formControlName="type">
-                    </div>
-                </div>
-                <div
-                    class="flex align-items-center justify-content-center h-4rem bg-green-100 font-bold text-white border-round m-2">
+                    class="flex align-items-center p-col-12 justify-content-center h-4rem bg-green-100 font-bold text-white border-round m-2">
                     <div class="col">
                         <p-dropdown [options]="cities" optionLabel="name"></p-dropdown>
 
@@ -31,10 +26,9 @@
                     accept="image/*" [auto]="true"></p-fileUpload>
             </div>
         </form>
-    </div>
+    </section>
     <footer
         class="animation-color animation-fill-forwards flex align-items-center justify-content-center font-bold border-round m-2 px-5 py-3">
-        <button class="border-noround" pButton type="button" label="Save" (click)="test()"></button>
         <button pButton type="button" label="Save" (click)="test()"></button>
     </footer>
 </section>
