@@ -4,19 +4,26 @@
             class="flex-auto h-4rem  text-white font-bold p-col-12 border-round flex align-items-center justify-content-center">
             Insert Pokémon data</h1>
     </header>
-    <section class="flex flex-column">
+    <section>
         <form [formGroup]="form">
             <div>
+                <!-- green background div init -->
                 <div
                     class="flex align-items-center justify-content-center h-4rem bg-green-100 font-bold text-white border-round m-2">
-                    <div class="fadeinleft animation-duration-1000 animation-iteration-1 border-round m-2 px-5 py-3">
-                        <input type="text" pInputText placeholder="name" formControlName="name">
-                    </div>
+                    <input class="fadeinleft animation-duration-1000 animation-iteration-1 border-round col-11" type="
+                            text" pInputText placeholder="Name" formControlName="name">
                 </div>
                 <div
                     class="flex align-items-center p-col-12 justify-content-center h-4rem bg-green-100 font-bold text-white border-round m-2">
-                    <div class="col">
-                        <p-dropdown [options]="cities" optionLabel="name"></p-dropdown>
+                    <div class="p-col-12">
+                        <p-dropdown [options]="types" optionLabel="name" formControlName="type">
+                            <ng-template let-pokemon pTemplate="item">
+                                <div class="flex justify-content-start gap-10">
+                                    <img [src]="pokemon.imageUrl" class="w-2rem"/>
+                                    <div sty>{{pokemon.name}}</div>
+                                </div>
+                            </ng-template>
+                        </p-dropdown>
 
                     </div>
                 </div>
