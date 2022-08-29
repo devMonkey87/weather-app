@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import {
+  UntypedFormBuilder,
+  UntypedFormGroup,
+  Validators,
+} from '@angular/forms';
+import { pokemonTypes } from '../../constants';
 
 @Component({
   selector: 'app-create-image-modal',
@@ -10,23 +15,26 @@ export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
   form!: UntypedFormGroup;
 
-  cities = ["a", "b"]
+  types = pokemonTypes;
 
   constructor(private readonly fb: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
+    console.log(this.types);
   }
 
   private initForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      type: [''],
+      type: ['', Validators.required],
       image: ['', Validators.required],
     });
   }
 
-  public test() {}
+  public test() {
+    console.log(this.form.value);
+  }
 
   public onBasicUploadAuto(event: any) {
     console.log('fichero', event);

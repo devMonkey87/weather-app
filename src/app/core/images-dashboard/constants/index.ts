@@ -1,7 +1,15 @@
 import { LOCALHOST_BASE_URL } from 'src/app/shared/constants';
 import { TableColumnType } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
-import { Image } from '../interfaces';
+import { Image, PokemonType } from '../interfaces';
+
+export const pokemonTypes: PokemonType[] = [
+  { name: 'PLANT', imageUrl: 'assets/plant.png' },
+  { name: 'EARTH', imageUrl: 'assets/earth.png' },
+  { name: 'FIRE', imageUrl: 'assets/fire.png' },
+  { name: 'WATER', imageUrl: 'assets/water.png' },
+  { name: 'PSY', imageUrl: 'assets/psychic.png' },
+];
 
 export const columnConfig = (): TableColumn[] => {
   return [

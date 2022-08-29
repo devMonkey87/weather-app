@@ -4,3 +4,8 @@ export interface Image {
   image: string;
   isSelected: boolean;
 }
+
+export interface PokemonType {
+  name: string;
+  imageUrl?: string;
+}
