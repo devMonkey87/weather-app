@@ -4,11 +4,11 @@ import { TableColumn } from 'src/app/shared/table/constants/interfaces';
 import { Image, PokemonType } from '../interfaces';
 
 export const pokemonTypes: PokemonType[] = [
-  { name: 'PLANT', imageUrl: 'assets/plant.png' },
-  { name: 'EARTH', imageUrl: 'assets/earth.png' },
-  { name: 'FIRE', imageUrl: 'assets/fire.png' },
-  { name: 'WATER', imageUrl: 'assets/water.png' },
-  { name: 'PSY', imageUrl: 'assets/psychic.png' },
+  { name: 'Plant', imageUrl: 'assets/plant.png' },
+  { name: 'Earth', imageUrl: 'assets/earth.png' },
+  { name: 'Fire', imageUrl: 'assets/fire.png' },
+  { name: 'Water', imageUrl: 'assets/water.png' },
+  { name: 'Psychic', imageUrl: 'assets/psychic.png' },
 ];
 
 export const columnConfig = (): TableColumn[] => {
