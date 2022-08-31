@@ -27,7 +27,7 @@ export class CreateImageModalComponent implements OnInit {
   private initForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      type: ['', Validators.required],
+      type: [undefined, Validators.required],
       image: ['', Validators.required],
     });
   }
