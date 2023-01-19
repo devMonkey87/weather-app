@@ -4,7 +4,7 @@ import {
   RAPID_API_BITCOIN_HOST_VALUE,
   RAPID_API_HOST,
   RAPID_API_KEY,
-  RAPID_API_KEY_PASSWORD,
+  RAPID_API_KEY_PW
 } from 'src/app/shared/constants';
 import { BITCOINS_URL } from '../constants';
 
@@ -17,7 +17,7 @@ export class BitcoinService {
   public async getData() {
     const headers = new HttpHeaders()
       .set(RAPID_API_HOST, RAPID_API_BITCOIN_HOST_VALUE)
-      .set(RAPID_API_KEY, RAPID_API_KEY_PASSWORD);
+      .set(RAPID_API_KEY, RAPID_API_KEY_PW);
     return await this.http.get<any[]>(BITCOINS_URL, { headers }).toPromise();
     // return of([
     //   {
