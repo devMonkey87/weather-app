@@ -6,6 +6,30 @@ export interface Image {
 }
 
 export interface PokemonType {
+  id: number;
+  type: Type;
+  description: string;
+  icon: Icon;
+}
+
+export interface Pokemon {
+  id: number;
   name: string;
-  imageUrl?: string;
+  type: PokemonType;
+  image: Image;
+  isSelected: boolean;
+}
+
+export interface Icon {
+  id: number;
+  data: string;
+}
+
+export enum Type {
+  FIRE,
+  WATER,
+  WIND,
+  PSYCHIC,
+  PLANT,
+  EARTH,
 }

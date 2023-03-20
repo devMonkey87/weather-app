@@ -1,15 +1,7 @@
 import { LOCALHOST_BASE_URL } from 'src/app/shared/constants';
 import { TableColumnType } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
-import { Image, PokemonType } from '../interfaces';
-
-export const pokemonTypes: PokemonType[] = [
-  { name: 'Plant', imageUrl: 'assets/plant.png' },
-  { name: 'Earth', imageUrl: 'assets/earth.png' },
-  { name: 'Fire', imageUrl: 'assets/fire.png' },
-  { name: 'Water', imageUrl: 'assets/water.png' },
-  { name: 'Psychic', imageUrl: 'assets/psychic.png' },
-];
+import { Pokemon } from '../interfaces';
 
 export const columnConfig = (): TableColumn[] => {
   return [
@@ -36,10 +28,11 @@ export const columnConfig = (): TableColumn[] => {
   ];
 };
 
-export const elementsConfig = (items: Image[]): any[] => {
+export const elementsConfig = (items: Pokemon[]): any[] => {
   items.map((item) => (item.isSelected = false));
   return items;
 };
 
 export const URL = 'https://binance43.p.rapidapi.com/ticker/24hr';
 export const IMAGES_URL = `${LOCALHOST_BASE_URL}${'files'}`;
+export const POKEMONS_URL = `${LOCALHOST_BASE_URL}${'pokemons'}`;

@@ -4,7 +4,6 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { pokemonTypes } from '../../constants';
 
 @Component({
   selector: 'app-create-image-modal',
@@ -15,13 +14,10 @@ export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
   form!: UntypedFormGroup;
 
-  types = pokemonTypes;
-
   constructor(private readonly fb: UntypedFormBuilder) {}
 
   ngOnInit(): void {
     this.initForm();
-    console.log(this.types);
   }
 
   private initForm() {

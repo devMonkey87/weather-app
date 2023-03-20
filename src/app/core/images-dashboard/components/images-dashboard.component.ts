@@ -4,7 +4,7 @@ import { ImageViewerComponent } from 'src/app/shared/image-viewer/image-viewer.c
 import { TableTypes } from 'src/app/shared/table/constants/enums/TableTypes.enum';
 import { TableColumn } from 'src/app/shared/table/constants/interfaces';
 import { columnConfig, elementsConfig } from '../constants';
-import { PictureService } from '../services/picture.service';
+import { PokemonService } from '../services/pokemon.service';
 import { Image } from './../interfaces';
 import { CreateImageModalComponent } from './create-image-modal/create-image-modal.component';
 
@@ -14,12 +14,15 @@ import { CreateImageModalComponent } from './create-image-modal/create-image-mod
   styleUrls: ['./images-dashboard.component.scss'],
 })
 export class ImagesDashboardComponent implements OnInit {
+  public get imageService(): PokemonService {
+    return this._pokemonService;
+  }
   public tableStyleClass: TableTypes | undefined;
   public tableColumns: TableColumn[] = [];
   public tableElements: Image[] = [];
 
   constructor(
-    private readonly imageService: PictureService,
+    private readonly _pokemonService: PokemonService,
     private modalService: NgbModal
   ) {}
 
@@ -30,7 +33,11 @@ export class ImagesDashboardComponent implements OnInit {
   private async setupTable() {
     this.tableColumns = columnConfig();
     this.tableStyleClass = TableTypes.Basic;
-    this.tableElements = elementsConfig(await this.imageService.getAllImages());
+    this.tableElements = elementsConfig(
+      await this._pokemonService.getAllImages()
+    ).map((item) => item.image);
+
+    console.log(this.tableElements);
   }
 
   public imageClicked(base64Image: string) {

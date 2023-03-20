@@ -17,8 +17,7 @@
                     class="flex align-items-center p-col-12 justify-content-start h-4rem bg-green-100 font-bold text-white border-round m-2">
                     <img class="w-3rem mr-1" *ngIf="form.get('type')?.value" [src]="form.get('type')?.value?.imageUrl">
                     <div class="p-col-12 ml-3">
-                        <p-dropdown [options]="types" optionLabel="name" formControlName="type"
-                            placeholder="Select type">
+                        <p-dropdown optionLabel="name" formControlName="type" placeholder="Select type">
                             <ng-template let-pokemon pTemplate="item">
                                 <div class="flex justify-content-start">
                                     <img [src]="pokemon.imageUrl" class="w-2rem" />
