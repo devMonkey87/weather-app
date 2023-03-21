@@ -18,8 +18,10 @@
                 (click)="imageClicked(element.image)" pTooltip="Click to preview">
             </div>
             <div *ngSwitchCase=tableColumnTypes.CHECKBOX>
-
               <p-checkbox [(ngModel)]="element.isSelected" [binary]="true" inputId="binary"></p-checkbox>
+            </div>
+            <div *ngSwitchCase=tableColumnTypes.ICON>
+              <button pButton type="button" label="Delete" class="p-button-danger" (click)="deletePokemon(element.id)"></button>
             </div>
           </ng-container>
         </td>

@@ -25,6 +25,11 @@ export const columnConfig = (): TableColumn[] => {
       type: TableColumnType.CHECKBOX,
       label: 'Select',
     },
+    {
+      id: 'actions',
+      type: TableColumnType.ICON,
+      label: 'Actions',
+    },
   ];
 };
 
