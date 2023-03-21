@@ -41,3 +41,4 @@ export const elementsConfig = (items: Pokemon[]): any[] => {
 export const URL = 'https://binance43.p.rapidapi.com/ticker/24hr';
 export const IMAGES_URL = `${LOCALHOST_BASE_URL}${'files'}`;
 export const POKEMONS_URL = `${LOCALHOST_BASE_URL}${'pokemons'}`;
+export const TYPES_URL = `${LOCALHOST_BASE_URL}${'types'}`;

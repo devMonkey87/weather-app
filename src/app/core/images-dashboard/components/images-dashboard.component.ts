@@ -42,15 +42,12 @@ export class ImagesDashboardComponent implements OnInit {
     this.tableElements = elementsConfig(
       await this._pokemonService.getAllPokemons()
     ).map((item) => item.image);
-
-    console.log(this.tableElements);
   }
 
   public elementClicked(element: RowElement) {
     switch (element.operation) {
       case OperationType.DELETE: {
         this._pokemonService.deletePokemon(element.value).then(() => {
-          console.log('eliminado');
           window.location.reload();
         });
         break;
