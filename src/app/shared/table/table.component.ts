@@ -23,15 +23,19 @@ export class TableComponent {
 
   constructor() {}
 
-  imageClicked(image: any) {
-    this.elementClick.emit({ value: image, operation: OperationType.SELECT });
-  }
-
   interpolateImgSource(image: string) {
     return `data:image/png;base64,${image}`;
   }
 
+  imageClicked(image: any) {
+    this.elementClick.emit({ value: image, operation: OperationType.SELECT });
+  }
+
   deletePokemon(id: string) {
     this.elementClick.emit({ value: id, operation: OperationType.DELETE });
+  }
+
+  editPokemon(id: string) {
+    this.elementClick.emit({ value: id, operation: OperationType.EDIT });
   }
 }

@@ -2,16 +2,23 @@
     width: 45px;
     height: 45px;
     border-radius: 50px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .image-container {
     display: block;
-    
+
 }
 
 table th,
 table td {
     display: table-cell;
     vertical-align: middle;
+}
+
+
+.test {
+    display: flex;
+    justify-content: space-between;
+    max-width: 30%;
 }

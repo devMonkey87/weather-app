@@ -11,7 +11,7 @@ import {
 } from 'src/app/shared/table/constants/interfaces';
 import { columnConfig, elementsConfig } from '../constants';
 import { PokemonService } from '../services/pokemon.service';
-import { Image } from './../interfaces';
+import { Pokemon } from './../interfaces';
 import { CreateImageModalComponent } from './create-image-modal/create-image-modal.component';
 
 @Component({
@@ -25,7 +25,7 @@ export class ImagesDashboardComponent implements OnInit {
   }
   public tableStyleClass: TableTypes | undefined;
   public tableColumns: TableColumn[] = [];
-  public tableElements: Image[] = [];
+  public tableElements: Pokemon[] = [];
 
   constructor(
     private readonly _pokemonService: PokemonService,
@@ -41,7 +41,7 @@ export class ImagesDashboardComponent implements OnInit {
     this.tableStyleClass = TableTypes.Basic;
     this.tableElements = elementsConfig(
       await this._pokemonService.getAllPokemons()
-    ).map((item) => item.image);
+    );
   }
 
   public elementClicked(element: RowElement) {

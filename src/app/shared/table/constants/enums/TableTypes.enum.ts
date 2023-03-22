@@ -17,4 +17,5 @@ export enum TableColumnType {
 export enum OperationType {
   SELECT,
   DELETE,
+  EDIT,
 }

@@ -25,6 +25,13 @@ export interface Icon {
   data: string;
 }
 
+export interface PokemonType {
+  id: number;
+  type: Type;
+  description: string;
+  icon: Icon;
+}
+
 export enum Type {
   FIRE,
   WATER,

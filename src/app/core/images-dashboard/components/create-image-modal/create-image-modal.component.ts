@@ -4,6 +4,7 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
+import { TypesService } from '../../services/types.service';
 
 @Component({
   selector: 'app-create-image-modal',
@@ -14,10 +15,14 @@ export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
   form!: UntypedFormGroup;
 
-  constructor(private readonly fb: UntypedFormBuilder) {}
+  constructor(
+    private readonly fb: UntypedFormBuilder,
+    private readonly typesService: TypesService
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
+    this.loadTypes();
   }
 
   private initForm() {
@@ -28,8 +33,15 @@ export class CreateImageModalComponent implements OnInit {
     });
   }
 
+  loadTypes() {
+    let x = this.typesService.getTypes();
+    setTimeout(() => {
+      console.log(x);
+    }, 600);
+  }
+
   public test() {
-    console.log(this.form.value);
+    //console.log(this.form.value);
   }
 
   public onBasicUploadAuto(event: any) {
