@@ -20,8 +20,11 @@
 
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
-        <span class="animate-green">Sunny</span>
-        <div [ngClass]="getBackgroundClass()" class="text-align-right">
-            Rain probability: {{data.precip | percent}}
+        <div class="bottom-panel">
+            <span class="animate-green">Sunny</span>
+            <div [ngClass]="getBackgroundClass()" class="text-align-right">
+                Rain probability: {{data.precip | percent}}
+            </div>
+
         </div>
     </div>
