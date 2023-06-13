@@ -18,4 +18,14 @@ export class CardComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.data = await this.weatherService.getData();
   }
+
+  getBackgroundClass(): string {
+    if (this.data.precip >= 0 && this.data.precip <= 10) {
+      return '';
+    } else if (this.data.precip > 70) {
+      return 'animate-red';
+    } else {
+      return '';
+    }
+  }
 }

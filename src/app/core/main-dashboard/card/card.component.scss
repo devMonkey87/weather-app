@@ -21,9 +21,61 @@
     justify-content: space-evenly;
 }
 
-.right-align {
-    float: right;
+.text-align-right {
+    text-align: right;
 }
+
+.animate-green {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at center, #FFDB4D 20%, #FFAA00 100%);
+    border-radius: 50%;
+    position: relative;
+    animation: spinAnimation 4s linear infinite;
+}
+
+@keyframes spinAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-red {
+    animation: red-animation 1s ease-in-out infinite;
+}
+
+@keyframes green-animation {
+    0% {
+        background-color: orange;
+    }
+
+    50% {
+        background-color: yellow;
+    }
+
+    100% {
+        background-color: orange;
+    }
+}
+
+@keyframes red-animation {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: orange;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
 
 .picture {
     height: 450px;
