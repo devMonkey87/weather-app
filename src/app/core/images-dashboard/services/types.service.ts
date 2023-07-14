@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TYPES_URL } from '../constants';
-import { Type } from '../interfaces';
+import { PokemonType } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +9,7 @@ import { Type } from '../interfaces';
 export class TypesService {
   constructor(private readonly http: HttpClient) {}
 
-  public async getTypes(): Promise<Type[]> {
-    return await this.http.get<Type[]>(TYPES_URL).toPromise();
+  public async getTypes(): Promise<PokemonType[]> {
+    return await this.http.get<PokemonType[]>(TYPES_URL).toPromise();
   }
 }
