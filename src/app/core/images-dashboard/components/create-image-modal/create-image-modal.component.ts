@@ -4,7 +4,8 @@ import {
   UntypedFormGroup,
   Validators,
 } from '@angular/forms';
-import { pokemonTypes } from '../../constants';
+import { PokemonType } from '../../interfaces';
+import { TypesService } from '../../services/types.service';
 
 @Component({
   selector: 'app-create-image-modal',
@@ -14,14 +15,16 @@ import { pokemonTypes } from '../../constants';
 export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
   form!: UntypedFormGroup;
+  types: PokemonType[] = [];
 
-  types = pokemonTypes;
-
-  constructor(private readonly fb: UntypedFormBuilder) {}
+  constructor(
+    private readonly fb: UntypedFormBuilder,
+    private readonly typesService: TypesService
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
-    console.log(this.types);
+    this.loadTypes();
   }
 
   private initForm() {
@@ -32,8 +35,21 @@ export class CreateImageModalComponent implements OnInit {
     });
   }
 
+  loadTypes(): void {
+    this.typesService.getTypes().then((typePromises) => {
+      Promise.all(typePromises).then((resolvedTypes) => {
+        this.types = resolvedTypes;
+        console.log('TIOIS' + resolvedTypes[0].icon.id);
+      });
+    });
+  }
+
   public test() {
-    console.log(this.form.value);
+    //console.log(this.form.value);
+  }
+
+  public interpolateImgSource(image: string) {
+    return `data:image/png;base64,${image}`;
   }
 
   public onBasicUploadAuto(event: any) {

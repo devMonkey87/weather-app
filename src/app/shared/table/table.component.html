@@ -7,6 +7,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let element of elementsConfig">
+        <!-- {{element | json}} -->
         <td *ngFor="let col of columnsConfig">
           <!-- Switch for adapting the view to the type of column we expect -->
           <ng-container [ngSwitch]="col.type">
@@ -14,11 +15,17 @@
               {{element[col.id]}}
             </div>
             <div *ngSwitchCase=tableColumnTypes.IMAGE class="image-container">
-              <img class="avatar-img" src="{{ interpolateImgSource(element.image) }}" (click)="imageClicked(element.image)" pTooltip="Click to preview">
+              <img class="avatar-img" src="{{ interpolateImgSource(element.image.image) }}"
+                (click)="imageClicked(element.image.image)" pTooltip="Click to preview">
             </div>
             <div *ngSwitchCase=tableColumnTypes.CHECKBOX>
-              
               <p-checkbox [(ngModel)]="element.isSelected" [binary]="true" inputId="binary"></p-checkbox>
+            </div>
+            <div *ngSwitchCase=tableColumnTypes.ICON class="test">
+              <button pButton type="button" label="Edit" class="p-button-warning" (click)="
+                editPokemon(element.id)"></button>
+              <button pButton type="button" label="Delete" class="p-button-danger"
+                (click)="deletePokemon(element.id)"></button>
             </div>
           </ng-container>
         </td>

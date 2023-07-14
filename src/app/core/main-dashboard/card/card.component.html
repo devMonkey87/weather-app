@@ -5,7 +5,7 @@
             <h5 class="card-title black">{{data.weather.description}}</h5>
             <h6 class="card-subtitle text-muted">{{data.city_name}}</h6>
         </div>
-        <img class= "picture" src="assets/bcn.jpg" alt="Kiwi standing on oval">
+        <img class="picture" src="assets/bcn.jpg" alt="Kiwi standing on oval">
         <ul class="list-group list-group-flush">
             <li class="flex-evenly">
                 <span>
@@ -20,8 +20,11 @@
 
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
-        <div class="card-footer text-muted right-align">
-            Rain probability: {{data.precip | percent}}
+        <div class="bottom-panel">
+            <span class="animate-green">Sunny</span>
+            <div [ngClass]="getBackgroundClass()" class="text-align-right">
+                Rain probability: {{data.precip | percent}}
+            </div>
+
         </div>
     </div>
-</div>

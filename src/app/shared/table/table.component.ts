@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TableColumnType } from './constants/enums/TableTypes.enum';
-import { TableColumn } from './constants/interfaces';
+import {
+  OperationType,
+  TableColumnType,
+} from './constants/enums/TableTypes.enum';
+import { RowElement, TableColumn } from './constants/interfaces';
 
 @Component({
   selector: 'app-table',
@@ -11,19 +14,28 @@ export class TableComponent {
   @Input() customTableClass: string | undefined;
   @Input() columnsConfig: TableColumn[] = [];
   @Input() elementsConfig: any = [];
-  
-  @Output() elementClick = new EventEmitter<string>();
+
+  @Output() elementClick = new EventEmitter<RowElement>();
+
   @Output() selected = new EventEmitter<boolean>();
 
   tableColumnTypes = TableColumnType;
 
   constructor() {}
 
-  imageClicked(image: any) {
-    this.elementClick.emit(image);
-  }
-
   interpolateImgSource(image: string) {
     return `data:image/png;base64,${image}`;
+  }
+
+  imageClicked(image: any) {
+    this.elementClick.emit({ value: image, operation: OperationType.SELECT });
+  }
+
+  deletePokemon(id: string) {
+    this.elementClick.emit({ value: id, operation: OperationType.DELETE });
+  }
+
+  editPokemon(id: string) {
+    this.elementClick.emit({ value: id, operation: OperationType.EDIT });
   }
 }

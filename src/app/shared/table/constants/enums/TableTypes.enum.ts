@@ -10,5 +10,12 @@ export enum TableColumnType {
   BUTTON,
   IMAGE,
   CHECKBOX,
-  OTHER
+  OTHER,
+  ICON,
+}
+
+export enum OperationType {
+  SELECT,
+  DELETE,
+  EDIT,
 }
