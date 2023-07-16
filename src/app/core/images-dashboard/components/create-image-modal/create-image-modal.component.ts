@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  UntypedFormBuilder,
-  UntypedFormGroup,
-  Validators,
-} from '@angular/forms';
-import { PokemonType } from '../../interfaces';
+import { FormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
+import { Pokemon, PokemonType } from '../../interfaces';
+import { PokemonService } from '../../services/pokemon.service';
 import { TypesService } from '../../services/types.service';
 
 @Component({
@@ -14,12 +11,14 @@ import { TypesService } from '../../services/types.service';
 })
 export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
-  form!: UntypedFormGroup;
+  form!: FormGroup;
   types: PokemonType[] = [];
+  selectedIcon: string = '';
 
   constructor(
     private readonly fb: UntypedFormBuilder,
-    private readonly typesService: TypesService
+    private readonly typesService: TypesService,
+    private readonly pokemonSercice: PokemonService
   ) {}
 
   ngOnInit(): void {
@@ -30,8 +29,8 @@ export class CreateImageModalComponent implements OnInit {
   private initForm() {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      type: [undefined, Validators.required],
-      image: ['', Validators.required],
+      type: ['', Validators.required],
+      image: [''],
     });
   }
 
@@ -39,13 +38,32 @@ export class CreateImageModalComponent implements OnInit {
     this.typesService.getTypes().then((typePromises) => {
       Promise.all(typePromises).then((resolvedTypes) => {
         this.types = resolvedTypes;
-        console.log('TIOIS' + resolvedTypes[0].icon.id);
       });
     });
   }
 
-  public test() {
-    //console.log(this.form.value);
+  public submit() {
+    this.processForm(this.form);
+    this.createPokemon(this.form);
+  }
+
+  private processForm(form: FormGroup) {
+    this.form.patchValue({ type: form.value.type.id });
+  }
+
+  private createPokemon(form: FormGroup) {
+    const pokemon: Pokemon = {
+      type: {
+        type: form.value.type,
+        description: 'd',
+        icon: { data: btoa('ssss') },
+      },
+      name: form.value.name,
+      image: { image: btoa('tbd'), description: 'test', isSelected: false },
+    };
+
+    console.log('pokemon', pokemon);
+    this.pokemonSercice.savePokemon(pokemon);
   }
 
   public interpolateImgSource(image: string) {

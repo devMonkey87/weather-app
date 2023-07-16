@@ -13,10 +13,11 @@
                     <input class="fadeinleft animation-duration-1000 animation-iteration-1 border-round col-11" type="
                             text" pInputText placeholder="Name" formControlName="name">
                 </div>
+                {{form.value | json}}
                 <div
                     class="flex align-items-center p-col-12 justify-content-start h-4rem bg-green-100 font-bold text-white border-round m-2">
-                    <div class="p-col-12 ml-3">
-                        <p-dropdown [options]="types" optionLabel="name" formControlName="type"
+                    <div style="position: relative;">
+                        <p-dropdown [options]="types" optionLabel="type" formControlName="type"
                             placeholder="Select type">
                             <ng-template let-type pTemplate="item">
                                 <div class="flex justify-content-start">
@@ -27,6 +28,7 @@
                             </ng-template>
                         </p-dropdown>
                     </div>
+
                 </div>
 
 
@@ -39,6 +41,6 @@
     </section>
     <footer
         class="animation-color animation-fill-forwards flex align-items-center justify-content-center font-bold border-round m-2 px-5 py-3">
-        <button pButton type="button" label="Save" (click)="test()"></button>
+        <button title="confirm" pButton type="button" label="Save" (click)="submit()"></button>
     </footer>
 </section>

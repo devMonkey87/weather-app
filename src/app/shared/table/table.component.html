@@ -12,7 +12,7 @@
           <!-- Switch for adapting the view to the type of column we expect -->
           <ng-container [ngSwitch]="col.type">
             <div *ngSwitchCase=tableColumnTypes.TEXT>
-              {{element[col.id]}}
+              {{element.name}}
             </div>
             <div *ngSwitchCase=tableColumnTypes.IMAGE class="image-container">
               <img class="avatar-img" src="{{ interpolateImgSource(element.image.image) }}"

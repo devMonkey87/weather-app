@@ -5,13 +5,13 @@
     }
 
     100% {
-        background-color: var(--yellow-500);
+        background-color: var(--green-500);
         color: var(--gray-900);
     }
 }
 
 .animation-color {
-    animation: animation-color 3s linear;
+    animation: animation-color 2s linear;
 }
 
 .avatar-img {

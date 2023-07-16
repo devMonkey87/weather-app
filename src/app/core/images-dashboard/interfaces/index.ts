@@ -1,35 +1,28 @@
 export interface Image {
-  id: number;
+  id?: number;
   description: string;
   image: string;
   isSelected: boolean;
 }
 
 export interface PokemonType {
-  id: number;
+  id?: number;
   type: Type;
   description: string;
   icon: Icon;
 }
 
 export interface Pokemon {
-  id: number;
+  id?: number;
   name: string;
   type: PokemonType;
   image: Image;
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 export interface Icon {
-  id: number;
+  id?: number;
   data: string;
-}
-
-export interface PokemonType {
-  id: number;
-  type: Type;
-  description: string;
-  icon: Icon;
 }
 
 export enum Type {
