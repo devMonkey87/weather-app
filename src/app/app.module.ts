@@ -18,7 +18,7 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
     MainDashboardComponent,
     ImcComponent,
     ImcModalComponent,
-    NavBarComponent
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,10 +27,9 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

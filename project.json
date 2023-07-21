@@ -21,15 +21,14 @@
         "main": "src/main.ts",
         "polyfills": "src/polyfills.ts",
         "tsConfig": "tsconfig.app.json",
-        "assets": [
-          "src/favicon.ico",
-          "src/assets"
-        ],
+        "assets": ["src/favicon.ico", "src/assets"],
         "styles": [
           "node_modules/animate.css/animate.min.css",
           "src/styles.scss",
           "bootswatch/dist/yeti/bootstrap.min.css",
-          "bootstrap/dist/css/bootstrap.min.css"
+          "bootstrap/dist/css/bootstrap.min.css",
+          "node_modules/@aposin/ng-aquila/css/normalize.css",
+          "node_modules/@aposin/ng-aquila/themes/aposin.css"
         ],
         "scripts": [
           "bootstrap/dist/js/bootstrap.min.js",
@@ -73,9 +72,7 @@
         }
       },
       "defaultConfiguration": "",
-      "outputs": [
-        "{options.outputPath}"
-      ]
+      "outputs": ["{options.outputPath}"]
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
@@ -101,13 +98,8 @@
         "polyfills": "src/polyfills.ts",
         "tsConfig": "tsconfig.spec.json",
         "karmaConfig": "karma.conf.js",
-        "assets": [
-          "src/favicon.ico",
-          "src/assets"
-        ],
-        "styles": [
-          "src/styles.scss"
-        ],
+        "assets": ["src/favicon.ico", "src/assets"],
+        "styles": ["src/styles.scss"],
         "scripts": []
       }
     },
