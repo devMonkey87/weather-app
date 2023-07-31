@@ -15,6 +15,8 @@ export class CreateImageModalComponent implements OnInit {
   types: PokemonType[] = [];
   selectedIcon: string = '';
 
+  uploader = undefined;
+
   constructor(
     private readonly fb: UntypedFormBuilder,
     private readonly typesService: TypesService,

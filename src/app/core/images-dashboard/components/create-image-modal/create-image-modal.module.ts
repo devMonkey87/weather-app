@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NxFileUploaderModule } from '@aposin/ng-aquila/file-uploader';
 import { DropdownModule } from 'primeng/dropdown';
-import { FileUploadModule } from 'primeng/fileupload';
 import { InputTextModule } from 'primeng/inputtext';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { CreateImageModalComponent } from './create-image-modal.component';
 
 @NgModule({
@@ -11,10 +12,11 @@ import { CreateImageModalComponent } from './create-image-modal.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FileUploadModule,
     FormsModule,
     DropdownModule,
     InputTextModule,
+    NxFileUploaderModule,
+    SharedModule,
   ],
   exports: [CreateImageModalComponent],
 })

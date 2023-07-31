@@ -14,6 +14,7 @@ import { TooltipModule } from 'primeng/tooltip';
 //Aposing aquila
 import { NxBadgeModule } from '@aposin/ng-aquila/badge';
 import { NxCheckboxModule } from '@aposin/ng-aquila/checkbox';
+import { NxIconModule } from '@aposin/ng-aquila/icon';
 import { NxLinkModule } from '@aposin/ng-aquila/link';
 import { NxPaginationModule } from '@aposin/ng-aquila/pagination';
 import { NxSwitcherModule } from '@aposin/ng-aquila/switcher';
@@ -39,6 +40,7 @@ import { NxTableModule } from '@aposin/ng-aquila/table';
     NxPaginationModule,
     NxSwitcherModule,
     NxTableModule,
+    NxIconModule,
   ],
   exports: [
     TableComponent,
@@ -52,6 +54,7 @@ import { NxTableModule } from '@aposin/ng-aquila/table';
     NxPaginationModule,
     NxSwitcherModule,
     NxTableModule,
+    NxIconModule,
   ],
 })
 export class SharedModule {}

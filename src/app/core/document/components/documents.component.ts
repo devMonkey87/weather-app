@@ -2,6 +2,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { DocumentService } from '../services/document.service';
 
 interface Contract {
   product: string;
@@ -18,9 +19,7 @@ interface Contract {
 })
 export class DocumentsComponent implements OnDestroy {
   private readonly _destroyed = new Subject<void>();
-
   showSelected = false;
-
   activateSelected = true;
   activeRow?: Contract;
 
@@ -30,7 +29,7 @@ export class DocumentsComponent implements OnDestroy {
   currentlyShownPageElements!: Contract[];
   currentlyAvailableElements!: Contract[];
 
-  constructor() {
+  constructor(private readonly documentsService: DocumentService) {
     this.currentlyAvailableElements = this.tableElements;
     this.selection.changed
       .pipe(takeUntil(this._destroyed))
@@ -234,5 +233,9 @@ export class DocumentsComponent implements OnDestroy {
   ngOnDestroy(): void {
     this._destroyed.next();
     this._destroyed.complete();
+  }
+
+  public generate() {
+    this.documentsService.downloadDocuments();
   }
 }
