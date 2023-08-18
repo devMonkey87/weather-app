@@ -1,8 +1,28 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
-import { Pokemon, PokemonType } from '../../interfaces';
+import {
+  NxFileUploadConfig,
+  NxFileUploader,
+} from '@aposin/ng-aquila/file-uploader';
+import {
+  NxMessageToastConfig,
+  NxMessageToastService,
+} from '@aposin/ng-aquila/message';
+import { Subject } from 'rxjs';
+import { InsertedPokemon, PokemonType } from '../../interfaces';
 import { PokemonService } from '../../services/pokemon.service';
 import { TypesService } from '../../services/types.service';
+
+interface UploadEvent {
+  originalEvent: Event;
+  files: File[];
+}
+
+interface FileUploadErrorEvent {
+  error: ErrorEvent;
+  files: File[];
+}
 
 @Component({
   selector: 'app-create-image-modal',
@@ -13,14 +33,35 @@ export class CreateImageModalComponent implements OnInit {
   uploadedFiles: any[] = [];
   form!: FormGroup;
   types: PokemonType[] = [];
-  selectedIcon: string = '';
 
-  uploader = undefined;
+  selectedIcon: string = '';
+  myCustomConfig: NxMessageToastConfig = {
+    duration: 3000,
+    context: 'success',
+    announcementMessage: 'File was uploaded successfully!',
+  };
+
+  readonly uploadConfig: NxFileUploadConfig = {
+    requestUrl: 'http://localhost:3000/api/upload',
+    uploadSeparately: true,
+    options: {
+      reportProgress: true,
+    },
+  };
+
+  public readonly uploader = new NxFileUploader(this.uploadConfig, this.http);
+
+  private readonly _destroyed = new Subject<void>();
+  testValue: object;
+
+  imageUrl: string | ArrayBuffer | null = null;
 
   constructor(
     private readonly fb: UntypedFormBuilder,
     private readonly typesService: TypesService,
-    private readonly pokemonSercice: PokemonService
+    private readonly pokemonSercice: PokemonService,
+    private readonly http: HttpClient,
+    private readonly messageToastService: NxMessageToastService
   ) {}
 
   ngOnInit(): void {
@@ -29,10 +70,12 @@ export class CreateImageModalComponent implements OnInit {
   }
 
   private initForm() {
+    /* The code is creating a form group using the `fb.group()` method from the `UntypedFormBuilder` class.
+The form group has three form controls: `name`, `type`, and `uploads[]`. */
     this.form = this.fb.group({
       name: ['', Validators.required],
       type: ['', Validators.required],
-      image: [''],
+      image: ['', Validators.required],
     });
   }
 
@@ -45,47 +88,59 @@ export class CreateImageModalComponent implements OnInit {
   }
 
   public submit() {
-    this.processForm(this.form);
     this.createPokemon(this.form);
   }
 
-  private processForm(form: FormGroup) {
-    this.form.patchValue({ type: form.value.type.id });
+  public onUpload(as: UploadEvent) {
+    debugger;
+    console.log('NUEVO COMPONENTE', as.files);
+  }
+
+  public testu(eo: FileUploadErrorEvent) {
+    debugger;
+  }
+
+  public onFileSelected(event: any): void {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.readImage(file);
+    }
+  }
+
+  readImage(file: File): void {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      this.imageUrl = e.target?.result;
+    };
+    reader.readAsDataURL(file);
   }
 
   private createPokemon(form: FormGroup) {
-    const pokemon: Pokemon = {
-      type: {
-        type: form.value.type,
-        description: 'd',
-        icon: { data: btoa('ssss') },
-      },
+    const base64String = this.imageUrl as string;
+    const pokemon: InsertedPokemon = {
+      type: form.value.type.id,
       name: form.value.name,
-      image: { image: btoa('tbd'), description: 'test', isSelected: false },
+      image: base64String.split(',')[1],
     };
 
-    console.log('pokemon', pokemon);
+    console.log('pokemon a insertar', pokemon);
     this.pokemonSercice.savePokemon(pokemon);
+
+    //TODO: ya se insertan los pokemons bien en la DB. Hay que corregir el backend para ver
+    // si hace falta crear DAOs aparte de los DTO y hacer que el FE cierre el modal y muestre
+    //la tabla con el pokemon nuevo insertado
   }
 
   public interpolateImgSource(image: string) {
     return `data:image/png;base64,${image}`;
   }
 
-  public onBasicUploadAuto(event: any) {
-    console.log('fichero', event);
-    for (let file of event.files) {
-      this.uploadedFiles.push(file);
-      console.log(
-        '🚀 ~ file: dynamic-form-modal.component.ts ~ line 39 ~ DynamicFormModalComponent ~ onBasicUploadAuto ~ uploadedFiles',
-        this.uploadedFiles
-      );
+  // public uploadFile(uploader: NxFileUploaderComponent) {
+  //   uploader.uploadFiles();
+  // }
 
-      const reader = new FileReader();
-      reader.readAsDataURL(this.uploadedFiles[0]);
-      reader.onload = () => {
-        console.log(reader.result);
-      };
-    }
+  ngOnDestroy(): void {
+    this._destroyed.next();
+    this._destroyed.complete();
   }
 }

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { POKEMONS_URL } from '../constants';
-import { Pokemon } from '../interfaces';
+import { InsertedPokemon, Pokemon } from '../interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +17,10 @@ export class PokemonService {
     return await this.http.get<Pokemon[]>(`${POKEMONS_URL}/${id}`).toPromise();
   }
 
-  public async savePokemon(pokemon: Pokemon): Promise<Pokemon> {
-    return await this.http.post<Pokemon>(POKEMONS_URL, pokemon).toPromise();
+  public async savePokemon(pokemon: InsertedPokemon): Promise<InsertedPokemon> {
+    return await this.http
+      .post<InsertedPokemon>(POKEMONS_URL, pokemon)
+      .toPromise();
   }
 
   public async updatePokemon(pokemon: Pokemon): Promise<Pokemon> {

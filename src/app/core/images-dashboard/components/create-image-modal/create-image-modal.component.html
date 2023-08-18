@@ -13,7 +13,6 @@
                     <input class="fadeinleft animation-duration-1000 animation-iteration-1 border-round col-11" type="
                             text" pInputText placeholder="Name" formControlName="name">
                 </div>
-                {{form.value | json}}
                 <div
                     class="flex align-items-center p-col-12 justify-content-start h-4rem bg-green-100 font-bold text-white border-round m-2">
                     <div style="position: relative;">
@@ -33,28 +32,16 @@
 
 
             </div>
-            <div>
-    <form [formGroup]="form">
-        <nx-file-uploader formControlName="documents" required #documentUpload accept="image/jpeg, image/x-png, image/png"
-            multiple [uploader]="uploader">
-            <nx-label size="small" class="nx-margin-bottom-3xs">Required file to upload</nx-label>
-            <span class="nx-margin-bottom-s" nxFileUploadHint>Only JPG or PNG files are accepted.</span>
-    
-            <button nxButton="primary" type="button" class="nx-margin-bottom-s" nxFileUploadButton>
-                <nx-icon name="plus" class="nx-margin-right-2xs"></nx-icon>
-                Add File
-            </button>
-    
-            <nx-error>Required!</nx-error>
-        </nx-file-uploader>
-    
-        <button nxButton="secondary small" type="button" [disabled]="!form.valid"
-            [nxFileUploadTriggerFor]="documentUpload">
-            Upload files
-        </button>
-    </form>
+            <!-- <div>
 
-            </div>
+                <p-fileUpload mode="basic" name="uploads[]" url="http://localhost:3000/api/upload" accept=".png"
+                    [maxFileSize]="1000000" (onUpload)="onUpload($event)" (onError)="testu($event)" [auto]="false"
+                    chooseLabel="Browse"></p-fileUpload>
+
+            </div> -->
+
+            <input type="file" placeholder="image" formControlName="image" (change)="onFileSelected($event)">
+            <img [src]="imageUrl" *ngIf="imageUrl">
         </form>
     </section>
     <footer
@@ -62,5 +49,3 @@
         <button title="confirm" pButton type="button" label="Save" (click)="submit()"></button>
     </footer>
 </section>
-
-

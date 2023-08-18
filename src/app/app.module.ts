@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NxMessageModule } from '@aposin/ng-aquila/message';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
     ReactiveFormsModule,
     NgbModule,
     BrowserAnimationsModule,
+    NxMessageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

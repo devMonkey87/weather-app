@@ -1,8 +1,8 @@
 export interface Image {
   id?: number;
-  description: string;
+  description?: string;
   image: string;
-  isSelected: boolean;
+  isSelected?: boolean;
 }
 
 export interface PokemonType {
@@ -18,6 +18,12 @@ export interface Pokemon {
   type: PokemonType;
   image: Image;
   isSelected?: boolean;
+}
+
+export interface InsertedPokemon {
+  name: string;
+  type: number;
+  image: string;
 }
 
 export interface Icon {
